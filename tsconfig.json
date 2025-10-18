@@ -9,6 +9,10 @@
     "esModuleInterop": true,
     "module": "ESNext",
     "moduleResolution": "Node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",

@@ -25,3 +25,7 @@ postgres-data/
 # Mac/Linux/Windows junk
 .DS_Store
 Thumbs.db
+credentials.json
+# Local notes
+TEMP.md
+credentials.json
