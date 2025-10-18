@@ -1,15 +1,23 @@
 import { defineConfig } from "eslint/config";
-import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import tseslint from "@typescript-eslint/eslint-plugin";
+import nextPlugin from "@next/eslint-plugin-next";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const typescriptConfigs = tseslint.configs["flat/recommended"];
 
-export default defineConfig([{
-    extends: [...nextCoreWebVitals],
-
-    rules: {
-        "react/jsx-key": "off",
+export default defineConfig([
+  {
+    ignores: ["build/**", ".next/**", "next-env.d.ts"]
+  },
+  ...typescriptConfigs,
+  {
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    plugins: {
+      "@next/next": nextPlugin
     },
-}]);
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs["core-web-vitals"].rules,
+      "react/jsx-key": "off"
+    }
+  }
+]);

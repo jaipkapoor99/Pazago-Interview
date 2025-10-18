@@ -9,7 +9,6 @@ async function runSeeds() {
     .sort();
 
   if (files.length === 0) {
-    // eslint-disable-next-line no-console
     console.log("No seeds to run.");
     return;
   }
@@ -17,18 +16,15 @@ async function runSeeds() {
   for (const file of files) {
     const filePath = path.join(seedsDir, file);
     const sql = await fs.readFile(filePath, "utf-8");
-    // eslint-disable-next-line no-console
     console.log(`Seeding data from: ${file}`);
     await query(sql);
   }
 
-  // eslint-disable-next-line no-console
   console.log("Seed data inserted.");
 }
 
 runSeeds()
   .catch((error) => {
-    // eslint-disable-next-line no-console
     console.error("Seeding failed", error);
     process.exitCode = 1;
   })

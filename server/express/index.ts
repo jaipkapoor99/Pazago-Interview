@@ -31,20 +31,11 @@ app.get("/healthz", (_req, res) => {
   res.json({ status: "ok", service: "express" });
 });
 
-app.use(
-  (
-    err: Error,
-    _req: express.Request,
-    res: express.Response,
-    _next: express.NextFunction
-  ) => {
-    // eslint-disable-next-line no-console
-    console.error(err);
-    res.status(500).json({ message: err.message });
-  }
-);
+app.use((err: Error, _req: express.Request, res: express.Response) => {
+  console.error(err);
+  res.status(500).json({ message: err.message });
+});
 
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.log(`Express API ready on http://localhost:${port}`);
 });

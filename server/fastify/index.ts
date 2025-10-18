@@ -31,10 +31,9 @@ async function start() {
   try {
     const server = await buildServer();
     await server.listen({ port, host: "0.0.0.0" });
-    // eslint-disable-next-line no-console
+
     console.log(`Fastify API ready on http://localhost:${port}`);
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error("Fastify boot failed", err);
     process.exit(1);
   }

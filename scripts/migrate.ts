@@ -10,7 +10,6 @@ async function runMigrations() {
     .sort();
 
   if (files.length === 0) {
-    // eslint-disable-next-line no-console
     console.log("No migrations to run.");
     return;
   }
@@ -19,18 +18,15 @@ async function runMigrations() {
     const filePath = path.join(migrationsDir, file);
     const sql = await fs.readFile(filePath, "utf-8");
 
-    // eslint-disable-next-line no-console
     console.log(`Running migration: ${file}`);
     await query(sql);
   }
 
-  // eslint-disable-next-line no-console
   console.log("All migrations applied.");
 }
 
 runMigrations()
   .catch((error) => {
-    // eslint-disable-next-line no-console
     console.error("Migration failed", error);
     process.exitCode = 1;
   })
