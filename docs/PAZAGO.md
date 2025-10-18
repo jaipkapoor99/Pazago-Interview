@@ -59,12 +59,14 @@ I appreciate his belief that every team member should feel like a stakeholder: m
 I see the platform as one hub that integrates six critical export functions.
 
 1. **Documentation Management**
-   - I like that Pazago offers a secure, centralized digital repository for export documents, reducing the folder sprawl I so often hear about.
-   - I noted that exporters can create, organize, and access files quickly.
+
+- I value that Pazago offers a secure, centralized digital repository for export documents, reducing the folder sprawl I so often hear about.
+- I noted that exporters can create, organize, and access files quickly.
 
 2. **Real-Time Order Tracking**
    - I value the always-on shipment visibility that helps teams stay ahead of delays.
-   - I like how the product surfaces live updates and condition monitoring.
+
+- I appreciate how the product surfaces live updates and condition monitoring.
 
 3. **Communication Hub**
    - I noticed the centralized conversations for teams, suppliers, and vendor partners.
@@ -72,7 +74,8 @@ I see the platform as one hub that integrates six critical export functions.
 
 4. **Quality Inspections**
    - I learned that teams can request inspections directly in the platform.
-   - I like that detailed inspection reports flow back into the core workflow.
+
+- I noted that detailed inspection reports flow back into the core workflow.
 
 5. **Logistics & Insurance**
    - I see the value in planning, booking, and managing logistics without leaving the platform.
@@ -80,7 +83,8 @@ I see the platform as one hub that integrates six critical export functions.
 
 6. **Finance & FOREX**
    - I observed that Pazago supports forex auditing, risk management, and streamlined payments.
-   - I like that exporters gain access to debt and equity financing options through the platform.
+
+- I observed that exporters gain access to debt and equity financing options through the platform.
 
 ### Additional Product Suite
 
@@ -88,7 +92,7 @@ I see the platform as one hub that integrates six critical export functions.
 
 - I rely on this as a signal that Pazago pushes trade insights and market intelligence to its customers.
 - I noticed the promise of real-time market data and trend tracking.
-- I like how it supports better forecasting and demand planning.
+- I confirmed it supports better forecasting and demand planning.
 
 #### Pazago Intel
 
@@ -111,26 +115,26 @@ I understand Provue as Pazago’s AI-powered product line focused on financial r
 
 #### Playbooks
 
-- I like the way Provue distills expert wisdom into 5-minute action plans.
-- I can imagine using the interactive chat for instant insights.
+- I rate highly the way Provue distills expert wisdom into concise playbooks.
+- I expect the interactive chat to deliver instant insights.
 - I appreciate that the platform curates frameworks from leaders like Warren Buffett, Charlie Munger, and Robert Kiyosaki.
 
 #### Actions
 
 - I see how pre-built prompts become one-tap workflows.
-- I like that I wouldn’t need to craft prompts or guess what to ask.
+- I appreciate that I wouldn’t need to craft prompts or guess what to ask.
 - I value the promise of consistent results for real finance tasks such as stock analysis and IPO evaluations.
 
 #### Context
 
-- I love that I could upload quarterly reports, earnings calls, or PDFs and build a personal memory bank.
+- I value the option to upload quarterly reports, earnings calls, or PDFs and build a personal memory bank.
 - I find the instant podcast summaries compelling for digesting documents quickly.
 - I appreciate that saved contexts remain accessible for later analysis.
 
 #### Studio
 
 - I’m intrigued by the ability to turn prompts, links, or documents into polished two-voice podcasts or audiobooks.
-- I like that no mic or editing is required.
+- I noted that no mic or editing is required.
 - I’m interested in tailoring podcast style and language for bilingual explainers or study guides.
 
 ### Provue Target Audience
@@ -269,7 +273,7 @@ Based on what I gathered, Pazago leans on a modern stack.
 - I appreciate Pazago’s managed platform approach instead of just matching buyers and sellers.
 - I see the India-centric expertise as a unique advantage.
 - I admire the tech-first DNA infused by Silicon Valley veterans.
-- I like having an all-in-one solution instead of juggling multiple vendors.
+- I prefer the all-in-one solution to juggling multiple vendors.
 - I value the claimed 20% cost reduction and 50% faster turnaround.
 - I find the real-time visibility compelling for reducing uncertainty.
 
@@ -288,7 +292,7 @@ Based on what I gathered, Pazago leans on a modern stack.
 
 ### Office Location
 
-- I like that the Mumbai office sits in Andheri East, just two minutes from the Western Express Highway Metro.
+- I noted that the Mumbai office sits in Andheri East, just two minutes from the Western Express Highway Metro.
 
 ### Company Stage & Growth
 
@@ -343,7 +347,7 @@ I keep hearing exporters describe fragmented workflows, misplaced documentation,
 
 ### Pazago’s Solution
 
-I liked how the team phrased it: they decoded the “export order recipe,” enabling a smooth journey from origin to destination. I interpret this as helping exporters focus on growth while Pazago orchestrates the logistics, paperwork, and coordination.
+I appreciated how the team phrased it: they decoded the “export order recipe,” enabling a smooth journey from origin to destination. I interpret this as helping exporters focus on growth while Pazago orchestrates the logistics, paperwork, and coordination.
 
 ---
 
