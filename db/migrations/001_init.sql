@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS insights (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    summary TEXT NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS playbooks (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL,
+    tags TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[]
+);

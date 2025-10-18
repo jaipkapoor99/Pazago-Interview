@@ -1,0 +1,43 @@
+{
+  "name": "provue-showcase",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:web dev:fastify dev:express",
+    "dev:web": "next dev",
+    "dev:fastify": "ts-node-dev --respawn --transpile-only server/fastify/index.ts",
+    "dev:express": "ts-node-dev --respawn --transpile-only server/express/index.ts",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "db:migrate": "ts-node scripts/migrate.ts",
+    "db:seed": "ts-node scripts/seed.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "fastify": "^5.6.1",
+    "next": "^15.5.6",
+    "pg": "^8.16.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.8.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "eslint": "^9.38.0",
+    "eslint-config-next": "^15.5.6",
+    "npm-run-all": "^4.1.5",
+    "prettier": "3.6.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}
