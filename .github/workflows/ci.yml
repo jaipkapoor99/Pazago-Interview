@@ -16,6 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Start Docker services
+        run: |
+          docker compose version
+          docker compose up -d provue-postgres
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,3 +38,7 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Tear down Docker services
+        if: always()
+        run: docker compose down

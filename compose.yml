@@ -2,8 +2,9 @@ name: provue-stack
 version: "3.8"
 
 services:
-  postgres:
-    image: postgres:15-alpine
+  provue-postgres:
+    image: postgres:17-alpine
+    container_name: provue-postgres
     ports:
       - "5432:5432"
     environment:
