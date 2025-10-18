@@ -4,8 +4,11 @@ import { pool, query } from "../server/db";
 
 async function runMigrations() {
   const migrationsDir = path.join(process.cwd(), "db", "migrations");
+  const supportedExtensions = [".ddl", ".sql"];
   const files = (await fs.readdir(migrationsDir))
-    .filter((file) => file.endsWith(".sql"))
+    .filter((file) =>
+      supportedExtensions.some((extension) => file.endsWith(extension)),
+    )
     .sort();
 
   if (files.length === 0) {
