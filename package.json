@@ -9,7 +9,7 @@
     "dev:express": "ts-node-dev --respawn --transpile-only server/express/index.ts",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "db:migrate": "ts-node scripts/migrate.ts",
