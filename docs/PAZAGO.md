@@ -58,31 +58,31 @@ I appreciate his belief that every team member should feel like a stakeholder: m
 
 I see the platform as one hub that integrates six critical export functions.
 
-1. **Documentation Management**
+- **Documentation Management**
 
 - I value that Pazago offers a secure, centralized digital repository for export documents, reducing the folder sprawl I so often hear about.
 - I noted that exporters can create, organize, and access files quickly.
 
-1. **Real-Time Order Tracking**
-   - I value the always-on shipment visibility that helps teams stay ahead of delays.
+- **Real-Time Order Tracking**
+  - I value the always-on shipment visibility that helps teams stay ahead of delays.
 
 - I appreciate how the product surfaces live updates and condition monitoring.
 
-1. **Communication Hub**
-   - I noticed the centralized conversations for teams, suppliers, and vendor partners.
-   - I appreciate that everything aligns inside an integrated inbox.
+- **Communication Hub**
+  - I noticed the centralized conversations for teams, suppliers, and vendor partners.
+  - I appreciate that everything aligns inside an integrated inbox.
 
-1. **Quality Inspections**
-   - I learned that teams can request inspections directly in the platform.
+- **Quality Inspections**
+  - I learned that teams can request inspections directly in the platform.
 
 - I noted that detailed inspection reports flow back into the core workflow.
 
-1. **Logistics & Insurance**
-   - I see the value in planning, booking, and managing logistics without leaving the platform.
-   - I noted that insurance management happens in the same place, shrinking coordination overhead.
+- **Logistics & Insurance**
+  - I see the value in planning, booking, and managing logistics without leaving the platform.
+  - I noted that insurance management happens in the same place, shrinking coordination overhead.
 
-1. **Finance & FOREX**
-   - I observed that Pazago supports forex auditing, risk management, and streamlined payments.
+- **Finance & FOREX**
+  - I observed that Pazago supports forex auditing, risk management, and streamlined payments.
 
 - I observed that exporters gain access to debt and equity financing options through the platform.
 
