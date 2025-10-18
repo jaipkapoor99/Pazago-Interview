@@ -1,5 +1,5 @@
 services:
-  pazago-postgres:
+  provue-postgres:
     image: postgres:17-alpine
     ports:
       - "${POSTGRES_HOST_PORT:-5432}:5432"
