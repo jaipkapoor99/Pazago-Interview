@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { pool, query } from "../server/db";
 
-async function runSeeds() {
+export async function runSeeds() {
   const seedsDir = path.join(process.cwd(), "db", "seeds");
   const files = (await fs.readdir(seedsDir))
     .filter((file) => file.endsWith(".sql"))
@@ -23,11 +23,13 @@ async function runSeeds() {
   console.log("Seed data inserted.");
 }
 
-runSeeds()
-  .catch((error) => {
-    console.error("Seeding failed", error);
-    process.exitCode = 1;
-  })
-  .finally(async () => {
-    await pool.end();
-  });
+if (process.env.NODE_ENV !== "test") {
+  runSeeds()
+    .catch((error) => {
+      console.error("Seeding failed", error);
+      process.exitCode = 1;
+    })
+    .finally(async () => {
+      await pool.end();
+    });
+}

@@ -4,8 +4,8 @@ import { query } from "../db";
 
 const port = Number(process.env.FASTIFY_PORT ?? 3001);
 
-async function buildServer() {
-  const fastify = Fastify({ logger: true });
+export async function buildServer() {
+  const fastify = Fastify({ logger: process.env.NODE_ENV !== "test" });
 
   await fastify.register(cors, {
     origin: process.env.CORS_ORIGIN ?? "*"
@@ -27,7 +27,7 @@ async function buildServer() {
   return fastify;
 }
 
-async function start() {
+export async function start() {
   try {
     const server = await buildServer();
     await server.listen({ port, host: "0.0.0.0" });
@@ -38,5 +38,3 @@ async function start() {
     process.exit(1);
   }
 }
-
-void start();

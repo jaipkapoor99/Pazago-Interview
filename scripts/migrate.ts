@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { pool, query } from "../server/db";
 
-async function runMigrations() {
+export async function runMigrations() {
   const migrationsDir = path.join(process.cwd(), "db", "migrations");
   const supportedExtensions = [".ddl", ".sql"];
   const files = (await fs.readdir(migrationsDir))
@@ -25,11 +25,13 @@ async function runMigrations() {
   console.log("All migrations applied.");
 }
 
-runMigrations()
-  .catch((error) => {
-    console.error("Migration failed", error);
-    process.exitCode = 1;
-  })
-  .finally(async () => {
-    await pool.end();
-  });
+if (process.env.NODE_ENV !== "test") {
+  runMigrations()
+    .catch((error) => {
+      console.error("Migration failed", error);
+      process.exitCode = 1;
+    })
+    .finally(async () => {
+      await pool.end();
+    });
+}

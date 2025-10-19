@@ -3,16 +3,13 @@ import express from "express";
 import cors from "cors";
 import { query } from "../db";
 
-const app = express();
 const port = Number(process.env.EXPRESS_PORT ?? 4000);
 
-app.use(
-  cors({
-    origin: process.env.CORS_ORIGIN ?? "*"
-  })
-);
-
-app.get("/api/playbooks", async (_req, res, next) => {
+export async function handleGetPlaybooks(
+  _req: express.Request,
+  res: express.Response,
+  next: express.NextFunction
+) {
   try {
     const rows = await query<{
       id: number;
@@ -25,17 +22,35 @@ app.get("/api/playbooks", async (_req, res, next) => {
   } catch (error) {
     next(error);
   }
-});
+}
 
-app.get("/healthz", (_req, res) => {
+export function handleHealth(_req: express.Request, res: express.Response) {
   res.json({ status: "ok", service: "express" });
-});
+}
 
-app.use((err: Error, _req: express.Request, res: express.Response) => {
-  console.error(err);
-  res.status(500).json({ message: err.message });
-});
+export function createApp() {
+  const app = express();
 
-app.listen(port, () => {
-  console.log(`Express API ready on http://localhost:${port}`);
-});
+  app.use(
+    cors({
+      origin: process.env.CORS_ORIGIN ?? "*"
+    })
+  );
+
+  app.get("/api/playbooks", handleGetPlaybooks);
+  app.get("/healthz", handleHealth);
+
+  app.use((err: Error, _req: express.Request, res: express.Response) => {
+    console.error(err);
+    res.status(500).json({ message: err.message });
+  });
+
+  return app;
+}
+
+export function start() {
+  const app = createApp();
+  return app.listen(port, () => {
+    console.log(`Express API ready on http://localhost:${port}`);
+  });
+}
