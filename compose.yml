@@ -18,33 +18,50 @@ services:
       timeout: 5s
       retries: 5
 
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "${REDIS_HOST_PORT:-6379}:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+
   fastify-api:
     build:
       context: .
     command: npm run dev:fastify
     environment:
-      DATABASE_URL: ${DATABASE_URL:-postgres://postgres:postgres@provue-postgres:5432/pazago_dev}
+      DATABASE_URL: ${DATABASE_URL:-postgres://postgres:postgres@postgres:5432/pazago_dev}
       FASTIFY_PORT: ${FASTIFY_PORT:-3001}
       CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:3000}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      REDIS_INSIGHTS_TTL: ${REDIS_INSIGHTS_TTL:-60}
     ports:
       - "${FASTIFY_HOST_PORT:-3001}:3001"
     depends_on:
-      provue-postgres:
+      postgres:
         condition: service_healthy
+      redis:
+        condition: service_started
 
   express-api:
     build:
       context: .
     command: npm run dev:express
     environment:
-      DATABASE_URL: ${DATABASE_URL:-postgres://postgres:postgres@provue-postgres:5432/pazago_dev}
+      DATABASE_URL: ${DATABASE_URL:-postgres://postgres:postgres@postgres:5432/pazago_dev}
       EXPRESS_PORT: ${EXPRESS_PORT:-4000}
       CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:3000}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      REDIS_PLAYBOOKS_TTL: ${REDIS_PLAYBOOKS_TTL:-60}
     ports:
       - "${EXPRESS_HOST_PORT:-4000}:4000"
     depends_on:
-      provue-postgres:
+      postgres:
         condition: service_healthy
+      redis:
+        condition: service_started
 
 volumes:
   pgdata:
+  redis-data:

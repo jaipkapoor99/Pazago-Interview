@@ -13,13 +13,15 @@ npm run dev
 
 The command above runs the frontend (`http://localhost:3000`), the Fastify API (`http://localhost:3001`), and the Express API (`http://localhost:4000`) together.
 
-To launch only the backend containers (Fastify, Express, and Postgres):
+To launch only the backend containers (Postgres, Redis, Fastify, and Express):
 
 ```bash
-docker compose up -d provue-postgres fastify-api express-api
+docker compose up -d postgres redis fastify-api express-api
 ```
 
-Fastify listens on `http://localhost:3001` and Express on `http://localhost:4000` when started this way.
+Fastify listens on `http://localhost:3001` and Express on `http://localhost:4000` when started this way. Redis is available on `redis://localhost:6379`.
+
+Environment defaults are wired through `.env.example`, including `REDIS_URL`, `REDIS_INSIGHTS_TTL`, and `REDIS_PLAYBOOKS_TTL` for cache tuning.
 
 ## Project Layout
 
@@ -43,5 +45,6 @@ Fastify listens on `http://localhost:3001` and Express on `http://localhost:4000
 2. Fastify queries the `insights` table and returns recent market summaries.
 3. Express queries the `playbooks` table and returns recommended actions.
 4. Next.js renders both datasets on the homepage, showing agent-ready intel.
+5. Redis caches the latest insights and playbooks to reduce load on Postgres.
 
 You can extend this scaffold with authentication, background jobs, or AI integrations to align even more closely with the Pazago Provue role.**_End Patch_** End Patch

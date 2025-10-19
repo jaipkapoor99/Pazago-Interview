@@ -3,7 +3,7 @@
 ## Project Structure & Module Organization
 
 - `app/` contains the Next.js App Router UI; keep new routes modular inside feature folders.
-- `server/fastify/` and `server/express/` expose backend APIs. Share database helpers via `server/db.ts` and avoid duplicating connection logic.
+- `server/fastify/` and `server/express/` expose backend APIs. Share database helpers via `server/db.ts` and avoid duplicating connection logic. Redis helpers live in `server/redis.ts` for cache access.
 - `db/migrations/` and `db/seeds/` store SQL files automatically applied by the Postgres container on startup.
 
 ## Build, Test, and Development Commands
@@ -11,6 +11,7 @@
 - `npm run dev` boots the Next.js app, Fastify API, and Express API concurrently.
 - `npm run dev:web`, `npm run dev:fastify`, and `npm run dev:express` start each service independently for focused debugging.
 - `npm run lint` runs the Next.js ESLint rules; fix issues before committing.
+- `docker compose up -d postgres redis fastify-api express-api` starts the full backend stack locally.
 - The Postgres container applies migrations and seeds automatically on startup; run `docker compose down -v` to reset data.
 
 ## Coding Style & Naming Conventions

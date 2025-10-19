@@ -1,6 +1,7 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import { query } from "../db";
+import { connectRedis, redisClient } from "../redis";
 
 const port = Number(process.env.FASTIFY_PORT ?? 3001);
 
@@ -12,12 +13,26 @@ export const buildServer = async () => {
   });
 
   fastify.get("/api/insights", async () => {
+    const cacheReady = await connectRedis();
+    if (cacheReady) {
+      const cached = await redisClient.get("insights:latest");
+      if (cached) {
+        return JSON.parse(cached);
+      }
+    }
+
     const rows = await query<{
       id: number;
       title: string;
       summary: string;
       created_at: string;
     }>("SELECT id, title, summary, created_at FROM insights ORDER BY created_at DESC");
+
+    if (cacheReady) {
+      await redisClient.set("insights:latest", JSON.stringify(rows), {
+        EX: Number(process.env.REDIS_INSIGHTS_TTL ?? 60)
+      });
+    }
 
     return rows;
   });
