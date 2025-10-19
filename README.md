@@ -46,5 +46,3 @@ Environment defaults are wired through `.env.example`, including `REDIS_URL`, `R
 3. Express queries the `playbooks` table and returns recommended actions.
 4. Next.js renders both datasets on the homepage, showing agent-ready intel.
 5. Redis caches the latest insights and playbooks to reduce load on Postgres.
-
-You can extend this scaffold with authentication, background jobs, or AI integrations to align even more closely with the Pazago Provue role.**_End Patch_** End Patch

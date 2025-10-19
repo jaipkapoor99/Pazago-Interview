@@ -11,6 +11,7 @@
 - `npm run dev` boots the Next.js app, Fastify API, and Express API concurrently.
 - `npm run dev:web`, `npm run dev:fastify`, and `npm run dev:express` start each service independently for focused debugging.
 - `npm run lint` runs the Next.js ESLint rules; fix issues before committing.
+- `npm run check` runs lint → tests → format → build in one pass before sharing work.
 - `docker compose up -d postgres redis fastify-api express-api` starts the full backend stack locally.
 - The Postgres container applies migrations and seeds automatically on startup; run `docker compose down -v` to reset data.
 
@@ -25,6 +26,13 @@
 - Add Jest when tests are introduced; place `.spec.ts` files adjacent to the code under test.
 - Prefer dependency-injection-friendly patterns so handlers can be unit tested without touching Postgres.
 - Record manual verification steps in PRs until automated tests land.
+- Use Redis mocks (as seen in `server/*/*.spec.ts`) when caching layers are involved.
+
+## Documentation
+
+- `docs/PAZAGO.md` hosts the company briefing tailored for Nikhil.
+- `docs/JOURNEY.md` captures the build narrative and Codex workflow notes.
+- Keep `docs/JD.md` untouched—it mirrors the official job description.
 
 ## Commit & Pull Request Guidelines
 
