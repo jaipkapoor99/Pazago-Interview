@@ -4,15 +4,14 @@
 
 - `app/` contains the Next.js App Router UI; keep new routes modular inside feature folders.
 - `server/fastify/` and `server/express/` expose backend APIs. Share database helpers via `server/db.ts` and avoid duplicating connection logic.
-- `db/migrations/` and `db/seeds/` store SQL files executed through `npm run db:migrate` and `npm run db:seed`.
-- `scripts/` holds TypeScript utilities for database automation. Add new scripts here and reference them in `package.json`.
+- `db/migrations/` and `db/seeds/` store SQL files automatically applied by the Postgres container on startup.
 
 ## Build, Test, and Development Commands
 
 - `npm run dev` boots the Next.js app, Fastify API, and Express API concurrently.
 - `npm run dev:web`, `npm run dev:fastify`, and `npm run dev:express` start each service independently for focused debugging.
-- `npm run db:migrate` applies schema changes; `npm run db:seed` resets demo data (uses `TRUNCATE` before inserts).
 - `npm run lint` runs the Next.js ESLint rules; fix issues before committing.
+- The Postgres container applies migrations and seeds automatically on startup; run `docker compose down -v` to reset data.
 
 ## Coding Style & Naming Conventions
 

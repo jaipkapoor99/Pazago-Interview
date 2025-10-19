@@ -22,7 +22,12 @@ describe("Fastify server", () => {
 
   it("returns insights from the database", async () => {
     mockQuery.mockResolvedValueOnce([
-      { id: 1, title: "Insight", summary: "Summary", created_at: "2025-01-01T00:00:00.000Z" }
+      {
+        id: 1,
+        title: "Insight",
+        summary: "Summary",
+        created_at: "2025-01-01T00:00:00.000Z"
+      }
     ]);
 
     server = await buildServer();
@@ -36,7 +41,12 @@ describe("Fastify server", () => {
       "SELECT id, title, summary, created_at FROM insights ORDER BY created_at DESC"
     );
     expect(JSON.parse(response.payload)).toEqual([
-      { id: 1, title: "Insight", summary: "Summary", created_at: "2025-01-01T00:00:00.000Z" }
+      {
+        id: 1,
+        title: "Insight",
+        summary: "Summary",
+        created_at: "2025-01-01T00:00:00.000Z"
+      }
     ]);
   });
 

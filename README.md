@@ -8,8 +8,6 @@ This project showcases a lightweight Provue-inspired stack with a Next.js fronte
 cp .env.example .env
 docker compose up -d
 npm install
-npm run db:migrate
-npm run db:seed
 npm run dev
 ```
 
@@ -21,9 +19,8 @@ The command above runs the frontend (`http://localhost:3000`), the Fastify API (
 - `server/fastify/` – Fastify service exposing `/api/insights`.
 - `server/express/` – Express service exposing `/api/playbooks`.
 - `server/db.ts` – Shared PostgreSQL pool.
-- `db/migrations/` – Schema migrations executed via `npm run db:migrate`.
-- `db/seeds/` – Sample data inserted with `npm run db:seed`.
-- `scripts/` – Utility scripts for database setup.
+- `db/migrations/` – Schema migrations automatically loaded by Docker on first run.
+- `db/seeds/` – Sample data automatically inserted when the Postgres container initializes.
 
 ## Key Scripts
 
@@ -31,7 +28,6 @@ The command above runs the frontend (`http://localhost:3000`), the Fastify API (
 - `npm run dev:web` – Start the Next.js frontend only.
 - `npm run dev:fastify` – Start the Fastify API locally.
 - `npm run dev:express` – Start the Express API locally.
-- `npm run db:migrate` / `npm run db:seed` – Provision and seed PostgreSQL.
 
 ## Data Flow
 
