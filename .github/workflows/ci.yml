@@ -95,11 +95,15 @@ jobs:
       - name: Append coverage summary to job log
         if: matrix.node-version == '24.x'
         run: |
-          node <<'NODE' >> "$GITHUB_STEP_SUMMARY"
-          const summary = require('./coverage/coverage-summary.json').total;
-          const out = `Statements: ${summary.statements.pct}%\nBranches: ${summary.branches.pct}%\nFunctions: ${summary.functions.pct}%\nLines: ${summary.lines.pct}%`;
-          console.log(out);
-          NODE
+          if [ -f coverage/coverage-summary.json ]; then
+            node <<'NODE' >> "$GITHUB_STEP_SUMMARY"
+            const summary = require('./coverage/coverage-summary.json').total;
+            const out = `Statements: ${summary.statements.pct}%\nBranches: ${summary.branches.pct}%\nFunctions: ${summary.functions.pct}%\nLines: ${summary.lines.pct}%`;
+            console.log(out);
+            NODE
+          else
+            echo "Coverage summary not found." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Upload test log on failure
         if: failure()
