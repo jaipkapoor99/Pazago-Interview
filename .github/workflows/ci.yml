@@ -36,7 +36,7 @@ jobs:
         run: |
           docker compose version
           docker compose up -d provue-postgres
-          docker compose exec -T provue-postgres pg_isready -U "${POSTGRES_USER:-postgres}"
+          docker compose wait provue-postgres || true
           docker compose down
           mkdir -p .ci/db-init
           date -u +"%Y-%m-%dT%H:%M:%SZ" > .ci/db-init/initialized.txt
