@@ -9,16 +9,15 @@ import { query } from "../db";
 
 const mockQuery = query as jest.MockedFunction<typeof query>;
 
-function createResponse() {
+const createResponse = () => {
   const res = {
     json: jest.fn()
   } as Partial<Response>;
   return res as Response;
-}
+};
 
-function createNext(): jest.MockedFunction<NextFunction> {
-  return jest.fn() as jest.MockedFunction<NextFunction>;
-}
+const createNext = (): jest.MockedFunction<NextFunction> =>
+  jest.fn() as jest.MockedFunction<NextFunction>;
 
 describe("Express handlers", () => {
   afterEach(() => {

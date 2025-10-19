@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getServerAuthSession } from "@/auth";
 
-export default async function IntelPage() {
+const IntelPage = async () => {
   const session = await getServerAuthSession();
 
   if (!session) {
@@ -29,4 +29,6 @@ export default async function IntelPage() {
       </ul>
     </section>
   );
-}
+};
+
+export default IntelPage;

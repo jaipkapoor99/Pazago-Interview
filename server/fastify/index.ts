@@ -4,7 +4,7 @@ import { query } from "../db";
 
 const port = Number(process.env.FASTIFY_PORT ?? 3001);
 
-export async function buildServer() {
+export const buildServer = async () => {
   const fastify = Fastify({ logger: process.env.NODE_ENV !== "test" });
 
   await fastify.register(cors, {
@@ -25,9 +25,9 @@ export async function buildServer() {
   fastify.get("/healthz", async () => ({ status: "ok", service: "fastify" }));
 
   return fastify;
-}
+};
 
-export async function start() {
+export const start = async () => {
   try {
     const server = await buildServer();
     await server.listen({ port, host: "0.0.0.0" });
@@ -37,4 +37,4 @@ export async function start() {
     console.error("Fastify boot failed", err);
     process.exit(1);
   }
-}
+};

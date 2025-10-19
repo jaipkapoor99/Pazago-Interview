@@ -5,11 +5,11 @@ import { query } from "../db";
 
 const port = Number(process.env.EXPRESS_PORT ?? 4000);
 
-export async function handleGetPlaybooks(
+export const handleGetPlaybooks = async (
   _req: express.Request,
   res: express.Response,
   next: express.NextFunction
-) {
+) => {
   try {
     const rows = await query<{
       id: number;
@@ -22,13 +22,13 @@ export async function handleGetPlaybooks(
   } catch (error) {
     next(error);
   }
-}
+};
 
-export function handleHealth(_req: express.Request, res: express.Response) {
+export const handleHealth = (_req: express.Request, res: express.Response) => {
   res.json({ status: "ok", service: "express" });
-}
+};
 
-export function createApp() {
+export const createApp = () => {
   const app = express();
 
   app.use(
@@ -46,11 +46,9 @@ export function createApp() {
   });
 
   return app;
-}
+};
 
-export function start() {
-  const app = createApp();
-  return app.listen(port, () => {
+export const start = () =>
+  createApp().listen(port, () => {
     console.log(`Express API ready on http://localhost:${port}`);
   });
-}

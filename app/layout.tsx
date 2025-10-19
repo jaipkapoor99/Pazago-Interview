@@ -9,7 +9,7 @@ export const metadata = {
   description: "Interview-ready demo showcasing Fastify + Express + PostgreSQL"
 };
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+const RootLayout = async ({ children }: { children: ReactNode }) => {
   const session = await getServerAuthSession();
 
   return (
@@ -35,4 +35,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

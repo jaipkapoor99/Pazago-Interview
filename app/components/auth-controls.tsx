@@ -7,7 +7,7 @@ type AuthControlsProps = {
   userName?: string | null;
 };
 
-export default function AuthControls({ isAuthenticated, userName }: AuthControlsProps) {
+const AuthControls = ({ isAuthenticated, userName }: AuthControlsProps) => {
   if (isAuthenticated) {
     return (
       <div className="auth-controls">
@@ -24,4 +24,6 @@ export default function AuthControls({ isAuthenticated, userName }: AuthControls
       Sign in with Google
     </button>
   );
-}
+};
+
+export default AuthControls;

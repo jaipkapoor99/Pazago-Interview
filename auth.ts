@@ -23,6 +23,4 @@ export const authOptions: NextAuthOptions = {
   ]
 };
 
-export function getServerAuthSession() {
-  return getServerSession(authOptions);
-}
+export const getServerAuthSession = () => getServerSession(authOptions);

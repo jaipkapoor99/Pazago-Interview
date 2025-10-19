@@ -9,10 +9,10 @@ export const pool = new Pool({
   connectionString
 });
 
-export async function query<T extends QueryResultRow = QueryResultRow>(
+export const query = async <T extends QueryResultRow = QueryResultRow>(
   text: string,
   params?: unknown[]
-) {
+) => {
   const client = await pool.connect();
   try {
     const result = await client.query<T>(text, params);
@@ -20,4 +20,4 @@ export async function query<T extends QueryResultRow = QueryResultRow>(
   } finally {
     client.release();
   }
-}
+};

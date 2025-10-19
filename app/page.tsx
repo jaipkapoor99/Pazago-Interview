@@ -12,7 +12,7 @@ type Playbook = {
   tags: string[];
 };
 
-async function fetchInsights(): Promise<Insight[]> {
+const fetchInsights = async (): Promise<Insight[]> => {
   const baseUrl = process.env.NEXT_PUBLIC_FASTIFY_BASE_URL ?? "http://localhost:3001";
   const res = await fetch(`${baseUrl}/api/insights`, { cache: "no-store" });
 
@@ -21,9 +21,9 @@ async function fetchInsights(): Promise<Insight[]> {
   }
 
   return res.json();
-}
+};
 
-async function fetchPlaybooks(): Promise<Playbook[]> {
+const fetchPlaybooks = async (): Promise<Playbook[]> => {
   const baseUrl = process.env.NEXT_PUBLIC_EXPRESS_BASE_URL ?? "http://localhost:4000";
   const res = await fetch(`${baseUrl}/api/playbooks`, { cache: "no-store" });
 
@@ -32,9 +32,9 @@ async function fetchPlaybooks(): Promise<Playbook[]> {
   }
 
   return res.json();
-}
+};
 
-export default async function Home() {
+const Home = async () => {
   const [insights, playbooks] = await Promise.all([fetchInsights(), fetchPlaybooks()]);
 
   return (
@@ -72,4 +72,6 @@ export default async function Home() {
       </section>
     </>
   );
-}
+};
+
+export default Home;
