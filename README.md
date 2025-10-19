@@ -13,11 +13,19 @@ npm run dev
 
 The command above runs the frontend (`http://localhost:3000`), the Fastify API (`http://localhost:3001`), and the Express API (`http://localhost:4000`) together.
 
+To launch only the backend containers (Fastify, Express, and Postgres):
+
+```bash
+docker compose up -d provue-postgres fastify-api express-api
+```
+
+Fastify listens on `http://localhost:3001` and Express on `http://localhost:4000` when started this way.
+
 ## Project Layout
 
 - `app/` – Next.js App Router UI that fetches insights and playbooks.
-- `server/fastify/` – Fastify service exposing `/api/insights`.
-- `server/express/` – Express service exposing `/api/playbooks`.
+- `server/fastify/` – Fastify service exposing `/api/insights` (mirrored by the `fastify-api` Docker service).
+- `server/express/` – Express service exposing `/api/playbooks` (mirrored by the `express-api` Docker service).
 - `server/db.ts` – Shared PostgreSQL pool.
 - `db/migrations/` – Schema migrations automatically loaded by Docker on first run.
 - `db/seeds/` – Sample data automatically inserted when the Postgres container initializes.

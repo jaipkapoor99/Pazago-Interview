@@ -11,8 +11,9 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "jest",
-    "format": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
-    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:view": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "check": "npm run lint && npm test -- --runInBand && npm run format && npm run build"
   },
   "dependencies": {
     "@fastify/cors": "^11.1.0",
