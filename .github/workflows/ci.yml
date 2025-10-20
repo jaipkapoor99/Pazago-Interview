@@ -35,9 +35,9 @@ jobs:
         if: matrix.node-version == '24.x' && steps.db-cache.outputs.cache-hit != 'true'
         run: |
           docker compose version
-          docker compose up -d provue-postgres
+          docker compose up -d 
           for i in {1..10}; do
-            if docker compose exec -T provue-postgres pg_isready -U "${POSTGRES_USER:-postgres}"; then
+            if docker compose exec -T postgres pg_isready -U "${POSTGRES_USER:-postgres}"; then
               break
             fi
             sleep 2
