@@ -1,14 +1,14 @@
-TRUNCATE TABLE insights RESTART IDENTITY CASCADE;
-TRUNCATE TABLE playbooks RESTART IDENTITY CASCADE;
+TRUNCATE TABLE shipments RESTART IDENTITY CASCADE;
+TRUNCATE TABLE trade_lanes RESTART IDENTITY CASCADE;
 
-INSERT INTO insights (title, summary)
+INSERT INTO shipments (origin, destination, status, estimated_delivery)
 VALUES
-  ('Q3 Earnings Momentum', 'Tech equities outperformed with 8% QoQ growth driven by AI demand.'),
-  ('Supply Chain Pressure', 'Shipping costs rose 12% WoW across APAC lanes, suggesting short-term margin pressure.'),
-  ('FX Watchlist', 'INR volatility remains elevated; exporters are shifting to rolling hedges.');
+  ('Shanghai, China', 'Los Angeles, USA', 'In Transit', NOW() + INTERVAL '10 days'),
+  ('Rotterdam, Netherlands', 'New York, USA', 'Customs Clearance', NOW() + INTERVAL '2 days'),
+  ('Singapore', 'Dubai, UAE', 'Delivered', NOW() - INTERVAL '3 days');
 
-INSERT INTO playbooks (name, description, tags)
+INSERT INTO trade_lanes (name, average_duration_days, common_risks)
 VALUES
-  ('Hedge Volatile Currencies', 'Recommended actions to maintain profit margins amid fluctuating FX rates.', ARRAY['forex', 'risk']),
-  ('Qualify New Buyers', 'Checklist to validate trade partners before onboarding into the pipeline.', ARRAY['due-diligence', 'crm']),
-  ('Optimize Logistics Spend', 'Steps to negotiate freight rates and leverage platform analytics for savings.', ARRAY['logistics', 'cost']);
+  ('Asia to North America West Coast', 25, ARRAY['Port Congestion', 'Typhoon Season']),
+  ('Europe to North America East Coast', 18, ARRAY['Winter Storms', 'Customs Delays']),
+  ('Intra-Asia', 10, ARRAY['Monsoon Season', 'Geopolitical Tensions']);

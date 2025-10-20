@@ -1,13 +1,14 @@
-CREATE TABLE IF NOT EXISTS insights (
+CREATE TABLE IF NOT EXISTS shipments (
     id SERIAL PRIMARY KEY,
-    title TEXT NOT NULL,
-    summary TEXT NOT NULL,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    origin TEXT NOT NULL,
+    destination TEXT NOT NULL,
+    status TEXT NOT NULL,
+    estimated_delivery TIMESTAMPTZ
 );
 
-CREATE TABLE IF NOT EXISTS playbooks (
+CREATE TABLE IF NOT EXISTS trade_lanes (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
-    description TEXT NOT NULL,
-    tags TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[]
+    average_duration_days INTEGER,
+    common_risks TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[]
 );

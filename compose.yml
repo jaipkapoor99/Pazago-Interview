@@ -26,7 +26,7 @@ services:
     volumes:
       - redis-data:/data
 
-  fastify-api:
+  fastify:
     build:
       context: .
     command: npm run dev:fastify
@@ -44,7 +44,7 @@ services:
       redis:
         condition: service_started
 
-  express-api:
+  express:
     build:
       context: .
     command: npm run dev:express

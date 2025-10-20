@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { buildServer } from "./index";
+import { buildServer } from "./index.ts";
 
 jest.mock("../db", () => ({
   query: jest.fn()
@@ -37,38 +37,40 @@ describe("Fastify server", () => {
     mockRedisClient.set.mockReset();
   });
 
-  it("returns insights from the database", async () => {
+  it("returns shipments from the database", async () => {
     mockConnectRedis.mockResolvedValue(true);
     mockRedisClient.get.mockResolvedValue(null);
     mockQuery.mockResolvedValueOnce([
       {
         id: 1,
-        title: "Insight",
-        summary: "Summary",
-        created_at: "2025-01-01T00:00:00.000Z"
+        origin: "Shanghai",
+        destination: "Los Angeles",
+        status: "In Transit",
+        estimated_delivery: "2025-01-15T00:00:00.000Z"
       }
     ]);
 
     server = await buildServer();
     const response = await server.inject({
       method: "GET",
-      url: "/api/insights"
+      url: "/api/shipments"
     });
 
     expect(response.statusCode).toBe(200);
     expect(mockConnectRedis).toHaveBeenCalled();
-    expect(mockRedisClient.get).toHaveBeenCalledWith("insights:latest");
+    expect(mockRedisClient.get).toHaveBeenCalledWith("shipments:all");
     expect(mockQuery).toHaveBeenCalledWith(
-      "SELECT id, title, summary, created_at FROM insights ORDER BY created_at DESC"
+      "SELECT id, origin, destination, status, estimated_delivery FROM shipments ORDER BY estimated_delivery DESC"
     );
     expect(mockRedisClient.set).toHaveBeenCalledWith(
-      "insights:latest",
+      "shipments:all",
       JSON.stringify([
         {
           id: 1,
-          title: "Insight",
-          summary: "Summary",
-          created_at: "2025-01-01T00:00:00.000Z"
+          origin: "Shanghai",
+          destination: "Los Angeles",
+          status: "In Transit",
+          estimated_delivery: "2025-01-15T00:00:00.000Z"
         }
       ]),
       { EX: 60 }
@@ -76,31 +78,44 @@ describe("Fastify server", () => {
     expect(JSON.parse(response.payload)).toEqual([
       {
         id: 1,
-        title: "Insight",
-        summary: "Summary",
-        created_at: "2025-01-01T00:00:00.000Z"
+        origin: "Shanghai",
+        destination: "Los Angeles",
+        status: "In Transit",
+        estimated_delivery: "2025-01-15T00:00:00.000Z"
       }
     ]);
   });
 
-  it("returns cached insights when present", async () => {
+  it("returns cached shipments when present", async () => {
     mockConnectRedis.mockResolvedValue(true);
     mockRedisClient.get.mockResolvedValue(
       JSON.stringify([
-        { id: 2, title: "Cached", summary: "Hit", created_at: "2025-02-01T00:00:00.000Z" }
+        {
+          id: 2,
+          origin: "Rotterdam",
+          destination: "New York",
+          status: "Delivered",
+          estimated_delivery: "2025-02-01T00:00:00.000Z"
+        }
       ])
     );
 
     server = await buildServer();
-    const response = await server.inject({ method: "GET", url: "/api/insights" });
+    const response = await server.inject({ method: "GET", url: "/api/shipments" });
 
     expect(response.statusCode).toBe(200);
     expect(mockConnectRedis).toHaveBeenCalled();
-    expect(mockRedisClient.get).toHaveBeenCalledWith("insights:latest");
+    expect(mockRedisClient.get).toHaveBeenCalledWith("shipments:all");
     expect(mockQuery).not.toHaveBeenCalled();
     expect(mockRedisClient.set).not.toHaveBeenCalled();
     expect(JSON.parse(response.payload)).toEqual([
-      { id: 2, title: "Cached", summary: "Hit", created_at: "2025-02-01T00:00:00.000Z" }
+      {
+        id: 2,
+        origin: "Rotterdam",
+        destination: "New York",
+        status: "Delivered",
+        estimated_delivery: "2025-02-01T00:00:00.000Z"
+      }
     ]);
   });
 

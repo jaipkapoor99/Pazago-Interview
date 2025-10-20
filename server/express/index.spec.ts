@@ -1,5 +1,5 @@
 import type { Request, Response, NextFunction } from "express";
-import { handleGetPlaybooks, handleHealth } from "./index";
+import { handleGetTradeLanes, handleHealth } from "./index.ts";
 
 jest.mock("../db", () => ({
   query: jest.fn()
@@ -42,29 +42,46 @@ describe("Express handlers", () => {
     jest.restoreAllMocks();
   });
 
-  it("responds with playbooks data", async () => {
+  it("responds with trade lanes data", async () => {
     mockConnectRedis.mockResolvedValue(true);
     mockRedisClient.get.mockResolvedValue(null);
     mockQuery.mockResolvedValueOnce([
-      { id: 1, name: "Alpha", description: "Desc", tags: ["one"] }
+      {
+        id: 1,
+        name: "Asia to North America West Coast",
+        average_duration_days: 25,
+        common_risks: ["Port congestion", "Weather delays"]
+      }
     ]);
 
     const res = createResponse();
     const next = createNext();
 
-    await handleGetPlaybooks({} as Request, res, next);
+    await handleGetTradeLanes({} as Request, res, next);
 
     expect(mockConnectRedis).toHaveBeenCalled();
-    expect(mockRedisClient.get).toHaveBeenCalledWith("playbooks:all");
+    expect(mockRedisClient.get).toHaveBeenCalledWith("trade_lanes:all");
     expect(mockQuery).toHaveBeenCalledWith(
-      "SELECT id, name, description, tags FROM playbooks ORDER BY id ASC"
+      "SELECT id, name, average_duration_days, common_risks FROM trade_lanes ORDER BY id ASC"
     );
     expect(res.json).toHaveBeenCalledWith([
-      { id: 1, name: "Alpha", description: "Desc", tags: ["one"] }
+      {
+        id: 1,
+        name: "Asia to North America West Coast",
+        average_duration_days: 25,
+        common_risks: ["Port congestion", "Weather delays"]
+      }
     ]);
     expect(mockRedisClient.set).toHaveBeenCalledWith(
-      "playbooks:all",
-      JSON.stringify([{ id: 1, name: "Alpha", description: "Desc", tags: ["one"] }]),
+      "trade_lanes:all",
+      JSON.stringify([
+        {
+          id: 1,
+          name: "Asia to North America West Coast",
+          average_duration_days: 25,
+          common_risks: ["Port congestion", "Weather delays"]
+        }
+      ]),
       { EX: 60 }
     );
     expect(next).not.toHaveBeenCalled();
@@ -79,30 +96,42 @@ describe("Express handlers", () => {
     const res = createResponse();
     const next = createNext();
 
-    await handleGetPlaybooks({} as Request, res, next);
+    await handleGetTradeLanes({} as Request, res, next);
 
     expect(mockConnectRedis).toHaveBeenCalled();
     expect(next).toHaveBeenCalledWith(error);
     expect(res.json).not.toHaveBeenCalled();
   });
 
-  it("serves cached playbooks", async () => {
+  it("serves cached trade lanes", async () => {
     mockConnectRedis.mockResolvedValue(true);
     mockRedisClient.get.mockResolvedValue(
-      JSON.stringify([{ id: 2, name: "Cached", description: "Hit", tags: ["two"] }])
+      JSON.stringify([
+        {
+          id: 2,
+          name: "Europe to East Coast South America",
+          average_duration_days: 20,
+          common_risks: ["Customs clearance"]
+        }
+      ])
     );
 
     const res = createResponse();
     const next = createNext();
 
-    await handleGetPlaybooks({} as Request, res, next);
+    await handleGetTradeLanes({} as Request, res, next);
 
     expect(mockConnectRedis).toHaveBeenCalled();
-    expect(mockRedisClient.get).toHaveBeenCalledWith("playbooks:all");
+    expect(mockRedisClient.get).toHaveBeenCalledWith("trade_lanes:all");
     expect(mockQuery).not.toHaveBeenCalled();
     expect(mockRedisClient.set).not.toHaveBeenCalled();
     expect(res.json).toHaveBeenCalledWith([
-      { id: 2, name: "Cached", description: "Hit", tags: ["two"] }
+      {
+        id: 2,
+        name: "Europe to East Coast South America",
+        average_duration_days: 20,
+        common_risks: ["Customs clearance"]
+      }
     ]);
     expect(next).not.toHaveBeenCalled();
   });

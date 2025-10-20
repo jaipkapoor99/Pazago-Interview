@@ -34,6 +34,6 @@ export const connectRedis = async (): Promise<boolean> => {
 
 export const disconnectRedis = async () => {
   if (redisClient.isOpen) {
-    await redisClient.disconnect();
+    redisClient.destroy();
   }
 };

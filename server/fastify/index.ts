@@ -12,10 +12,10 @@ export const buildServer = async () => {
     origin: process.env.CORS_ORIGIN ?? "*"
   });
 
-  fastify.get("/api/insights", async () => {
+  fastify.get("/api/shipments", async () => {
     const cacheReady = await connectRedis();
     if (cacheReady) {
-      const cached = await redisClient.get("insights:latest");
+      const cached = await redisClient.get("shipments:all");
       if (cached) {
         return JSON.parse(cached);
       }
@@ -23,14 +23,17 @@ export const buildServer = async () => {
 
     const rows = await query<{
       id: number;
-      title: string;
-      summary: string;
-      created_at: string;
-    }>("SELECT id, title, summary, created_at FROM insights ORDER BY created_at DESC");
+      origin: string;
+      destination: string;
+      status: string;
+      estimated_delivery: string;
+    }>(
+      "SELECT id, origin, destination, status, estimated_delivery FROM shipments ORDER BY estimated_delivery DESC"
+    );
 
     if (cacheReady) {
-      await redisClient.set("insights:latest", JSON.stringify(rows), {
-        EX: Number(process.env.REDIS_INSIGHTS_TTL ?? 60)
+      await redisClient.set("shipments:all", JSON.stringify(rows), {
+        EX: Number(process.env.REDIS_SHIPMENTS_TTL ?? 60)
       });
     }
 

@@ -6,7 +6,7 @@ import { connectRedis, redisClient } from "../redis.ts";
 
 const port = Number(process.env.EXPRESS_PORT ?? 4000);
 
-export const handleGetPlaybooks = async (
+export const handleGetTradeLanes = async (
   _req: express.Request,
   res: express.Response,
   next: express.NextFunction
@@ -14,7 +14,7 @@ export const handleGetPlaybooks = async (
   try {
     const cacheReady = await connectRedis();
     if (cacheReady) {
-      const cached = await redisClient.get("playbooks:all");
+      const cached = await redisClient.get("trade_lanes:all");
       if (cached) {
         res.json(JSON.parse(cached));
         return;
@@ -24,13 +24,15 @@ export const handleGetPlaybooks = async (
     const rows = await query<{
       id: number;
       name: string;
-      description: string;
-      tags: string[];
-    }>("SELECT id, name, description, tags FROM playbooks ORDER BY id ASC");
+      average_duration_days: number;
+      common_risks: string[];
+    }>(
+      "SELECT id, name, average_duration_days, common_risks FROM trade_lanes ORDER BY id ASC"
+    );
 
     if (cacheReady) {
-      await redisClient.set("playbooks:all", JSON.stringify(rows), {
-        EX: Number(process.env.REDIS_PLAYBOOKS_TTL ?? 60)
+      await redisClient.set("trade_lanes:all", JSON.stringify(rows), {
+        EX: Number(process.env.REDIS_TRADE_LANES_TTL ?? 60)
       });
     }
 
@@ -53,7 +55,7 @@ export const createApp = () => {
     })
   );
 
-  app.get("/api/playbooks", handleGetPlaybooks);
+  app.get("/api/trade-lanes", handleGetTradeLanes);
   app.get("/healthz", handleHealth);
 
   app.use((err: Error, _req: express.Request, res: express.Response) => {

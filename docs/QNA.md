@@ -89,6 +89,14 @@ You will be working with a variety of modern technologies, including:
 
 ## 🤖 About the Technology
 
+### 🚚 What are Shipments and Trade Lanes?
+
+In the context of this demo, which is tailored to the import-export business of Pazago, we have two main data models:
+
+- **Shipments:** These represent individual shipments being transported from an origin to a destination. They have a status (e.g., "In Transit", "Delivered") and an estimated delivery date. This data is served by the Fastify service.
+
+- **Trade Lanes:** These represent common shipping routes (e.g., "Asia to North America West Coast"). They have information about the average duration of the route and common risks associated with it. This data is served by the Express service and replaces the more generic "playbooks".
+
 ### 🤔 What are MCP servers?
 
 MCP (Multi-Context-Protocol) servers are a key part of the AI infrastructure at Pazago. They are used to integrate AI agents and manage their context. 🤖
@@ -114,15 +122,23 @@ Pazago uses a modern and diverse technology stack tuned for AI-heavy workloads, 
 
 ### 🛤️ How is the Express API structured in this demo?
 
-The Express service is designed for simplicity. It provides the data for the 'playbooks' feature and a health check endpoint. To avoid code duplication, it uses shared helpers for accessing the database and cache. This design keeps the main service logic clean and easy to test, ensuring that the playbook data is always available for the AI features in the application.
+The Express service is designed for simplicity. It provides the data for the 'trade lanes' feature and a health check endpoint. To avoid code duplication, it uses shared helpers for accessing the database and cache. This design keeps the main service logic clean and easy to test, ensuring that the trade lane data is always available for the AI features in the application.
 
 ### 📦 What does the Fastify server own?
 
-The Fastify service is responsible for delivering the 'insights' data. It's built with a focus on performance and uses a plugin-based architecture. It handles security (like CORS) and logging in a configurable way. The service combines database access and caching to deliver insights with a set expiration time. This approach ensures that the data is served quickly, which is important for the AI features that use these insights for summarization and other tasks. It also makes testing the service straightforward.
+The Fastify service is responsible for delivering the 'shipments' data. It's built with a focus on performance and uses a plugin-based architecture. It handles security (like CORS) and logging in a configurable way. The service combines database access and caching to deliver shipments with a set expiration time. This approach ensures that the data is served quickly, which is important for the AI features that use these shipments for summarization and other tasks. It also makes testing the service straightforward.
+
+### 🤔 In layman's terms, what are Fastify, Express, and Redis in this project?
+
+In this project, you can think of the backend as being split into two smaller, specialized services that work together. This is a common approach called "microservices."
+
+- **Fastify and Express:** These are like two different chefs in a kitchen. They both do a similar job—they take requests for data, prepare it, and send it back. In this project, one "chef" (Fastify) is responsible for handling all requests related to "shipments," while the other "chef" (Express) handles everything related to "trade lanes." They are both lightweight and efficient, but the project uses two different ones to demonstrate how different services can be used together.
+
+- **Redis:** This is like a super-fast pantry for our chefs. Instead of going all the way to the main storage (the PostgreSQL database) every single time they need an ingredient (data), they can first check Redis. If the data is there, they can grab it much more quickly. This is called "caching," and it helps the application run faster by reducing the number of times it has to access the slower main database.
 
 ### 🔁 How is Redis used across the services?
 
-A single, shared Redis connection is used by both backend services to improve efficiency. Each service uses specific keys to cache its data, like 'playbooks' or 'insights', with configurable expiration times. This caching strategy keeps frequently accessed data readily available for the AI, and it's designed to be resilient. If the cache is unavailable, the system automatically falls back to fetching data from the database, ensuring the AI continues to receive fresh information.
+A single, shared Redis connection is used by both backend services to improve efficiency. Each service uses specific keys to cache its data, like 'trade lanes' or 'shipments', with configurable expiration times. This caching strategy keeps frequently accessed data readily available for the AI, and it's designed to be resilient. If the cache is unavailable, the system automatically falls back to fetching data from the database, ensuring the AI continues to receive fresh information.
 
 ### 🧪 How are Express and Fastify endpoints verified?
 
@@ -167,7 +183,7 @@ The result? The initial setup took slightly longer, but now both services are cl
 
 During the development of this demo, I anticipated a common production issue: cache unavailability. While this project isn't in production yet, I built it with production-readiness in mind.
 
-**Situation:** A service that relies heavily on caching, like our insights and playbooks APIs, can become a single point of failure if the caching layer (Redis) goes down. The default behavior might be to throw an error, making the entire feature unusable.
+**Situation:** A service that relies heavily on caching, like our shipments and trade lanes APIs, can become a single point of failure if the caching layer (Redis) goes down. The default behavior might be to throw an error, making the entire feature unusable.
 
 **Task:** My goal was to design the system to be resilient to such failures, ensuring the application can gracefully degrade rather than fail completely.
 
@@ -181,7 +197,7 @@ My approach is to use AI as a partner to overcome the 'blank page syndrome' and 
 
 First, I **identify the 'knowns'**—the core requirements, constraints, and desired outcomes, even if they're fuzzy. I then use AI-powered tools to brainstorm and sketch out a mental map of the system. This involves generating boilerplate code, exploring different data models, and visualizing potential API contracts.
 
-Once I have this initial map, I start **connecting the dots**. I write small, focused experiments and use the feedback from those to refine the map. For example, in this demo, I started with a vague idea of 'insights' and 'playbooks'. I used AI to generate some initial data structures and API endpoints, which I then refined as I built out the frontend and saw how the data would actually be used.
+Once I have this initial map, I start **connecting the dots**. I write small, focused experiments and use the feedback from those to refine the map. For example, in this demo, I started with a vague idea of 'shipments' and 'trade lanes'. I used AI to generate some initial data structures and API endpoints, which I then refined as I built out the frontend and saw how the data would actually be used.
 
 This iterative process of mapping and connecting the dots, with AI as a co-pilot, allows me to move from ambiguity to a clear, actionable plan quickly and effectively.
 
