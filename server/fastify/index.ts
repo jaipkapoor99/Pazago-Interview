@@ -1,7 +1,7 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
-import { query } from "../db";
-import { connectRedis, redisClient } from "../redis";
+import { query } from "../db.ts";
+import { connectRedis, redisClient } from "../redis.ts";
 
 const port = Number(process.env.FASTIFY_PORT ?? 3001);
 
