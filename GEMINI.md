@@ -51,3 +51,4 @@ This will start the Next.js frontend, the Fastify server, and the Express server
 - **Testing:** The project uses Jest for testing. New features should include corresponding tests.
 - **Linting and Formatting:** The project uses ESLint and Prettier to maintain code quality and consistency. It's recommended to run `npm run check` before committing changes.
 - **Authentication:** While `next-auth` is set up, the implementation is missing. This is a TODO for the project.
+- **MCP:** Use relevant MCP servers whenever possible.
