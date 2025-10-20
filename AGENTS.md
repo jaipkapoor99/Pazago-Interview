@@ -33,6 +33,7 @@
 - `docs/PAZAGO.md` hosts the company briefing tailored for Nikhil.
 - `docs/JOURNEY.md` captures the build narrative and Codex workflow notes.
 - Keep `docs/JD.md` untouched—it mirrors the official job description.
+- `docs/QUESTIONS.md` tracks live interview prompts for Nikhil across logistics, compensation, and team rituals.
 
 ## Commit & Pull Request Guidelines
 
