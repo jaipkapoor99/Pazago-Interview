@@ -15,6 +15,7 @@
 
 - 💻 What’s the default developer hardware/OS mix, and how do you keep tooling consistent across setups?
 - 🧰 What does your current tech stack look like for AI agents and MCP servers? Any frameworks or tooling you consider must-know before joining?
+- 🤖 Which foundation models underpin your AI solutions today—closed-source western providers (OpenAI, Anthropic, Google), consumer subscriptions, or self-hosted open-source stacks like Qwen or DeepSeek?
 - 🧠 How are state management and session persistence handled for agents connected via MCP?
 - 📈 What’s your approach to scaling MCP servers and handling spikes in concurrent agent requests?
 - 🛡️ How do you authenticate and authorize agents that touch multiple internal services?
