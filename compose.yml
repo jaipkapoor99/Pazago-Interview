@@ -1,5 +1,8 @@
+# This file is a Docker Compose file that defines the services for the project.
+
 name: provue
 services:
+  # The PostgreSQL database service.
   postgres:
     image: postgres:17-alpine
     ports:
@@ -18,6 +21,7 @@ services:
       timeout: 5s
       retries: 5
 
+  # The Redis service.
   redis:
     image: redis:7-alpine
     ports:
@@ -26,6 +30,7 @@ services:
     volumes:
       - redis-data:/data
 
+  # The Fastify server service.
   fastify:
     build:
       context: .
@@ -44,6 +49,7 @@ services:
       redis:
         condition: service_started
 
+  # The Express server service.
   express:
     build:
       context: .
@@ -62,6 +68,7 @@ services:
       redis:
         condition: service_started
 
+# The volumes for the services.
 volumes:
   pgdata:
   redis-data:

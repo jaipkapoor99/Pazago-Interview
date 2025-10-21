@@ -1,6 +1,10 @@
 # GEMINI.md
 
+> This file provides an overview of the project, including the architecture, how to build and run the project, and the development conventions.
+
 ## Project Overview
+
+> This section provides a high-level overview of the project's architecture.
 
 This project is a full-stack application built with a Next.js frontend and two microservices (Fastify and Express) for the backend. It uses PostgreSQL as the database and Redis for caching. The application displays shipment and trade lane information.
 
@@ -13,6 +17,8 @@ This project is a full-stack application built with a Next.js frontend and two m
 - **Authentication:** The project is set up with `next-auth`, but the implementation in `app/api/auth/[...nextauth]/route.ts` is currently empty.
 
 ## Building and Running
+
+> This section explains how to build and run the project, both with Docker and locally.
 
 ### With Docker (Recommended)
 
@@ -33,6 +39,8 @@ This will start the Next.js frontend, the Fastify server, and the Express server
 
 ### Key Scripts
 
+> This section lists the key npm scripts that are available in the project.
+
 - `npm run dev`: Starts the Next.js frontend, Fastify server, and Express server in development mode.
 - `npm run dev:web`: Starts only the Next.js frontend.
 - `npm run dev:fastify`: Starts only the Fastify server.
@@ -45,6 +53,8 @@ This will start the Next.js frontend, the Fastify server, and the Express server
 - `npm run check`: Runs linting, testing, formatting, and a production build.
 
 ## Development Conventions
+
+> This section describes the development conventions that are used in the project.
 
 - **TypeScript:** The entire project is written in TypeScript.
 - **Microservices:** The backend is split into two microservices, one for each data type (shipments and trade_lanes). This is a good pattern to follow for adding new features.

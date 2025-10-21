@@ -1,3 +1,6 @@
+-- This file contains the database schema for the project.
+
+-- Create the shipments table.
 CREATE TABLE IF NOT EXISTS shipments (
     id SERIAL PRIMARY KEY,
     origin TEXT NOT NULL,
@@ -6,6 +9,7 @@ CREATE TABLE IF NOT EXISTS shipments (
     estimated_delivery TIMESTAMPTZ
 );
 
+-- Create the trade_lanes table.
 CREATE TABLE IF NOT EXISTS trade_lanes (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,

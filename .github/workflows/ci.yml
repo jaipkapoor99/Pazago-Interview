@@ -1,29 +1,46 @@
+# This is a GitHub Actions workflow file that defines the Continuous Integration (CI) process for the project.
+# It is written in YAML format.
+
+# The name of the workflow, which will be displayed on the GitHub Actions UI.
 name: CI
 
+# This section defines the triggers for the workflow.
 on:
+  # The workflow will run on every push to the 'main' branch.
   push:
     branches:
       - main
+  # The workflow will also run on every pull request that targets the 'main' branch.
   pull_request:
     branches:
       - main
 
+# This section defines the jobs that will be executed as part of the workflow.
 jobs:
+  # This is the name of the job.
   checks:
+    # This specifies the type of runner that the job will run on. In this case, it's the latest version of Ubuntu.
     runs-on: ubuntu-latest
+    # This defines a matrix of different configurations for the job.
     strategy:
+      # If one of the matrix jobs fails, the other jobs will continue to run.
       fail-fast: false
+      # This is the matrix configuration. The job will run for each of the specified Node.js versions.
       matrix:
         node-version: ["20.x", "22.x", "24.x"]
+    # This section defines environment variables that will be available to all steps in the job.
     env:
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
 
+    # This section defines the steps that will be executed as part of the job.
     steps:
+      # This step checks out the repository code.
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # This step caches the database initialization snapshot to speed up the workflow.
       - name: Cache database init snapshot
         id: db-cache
         uses: actions/cache@v4
@@ -31,6 +48,7 @@ jobs:
           path: .ci/db-init
           key: db-init-${{ hashFiles('db/migrations/**/*.sql', 'db/seeds/**/*.sql') }}
 
+      # This step verifies the database migrations if the cache is not hit.
       - name: Verify migrations when cache misses
         if: matrix.node-version == '24.x' && steps.db-cache.outputs.cache-hit != 'true'
         run: |
@@ -46,15 +64,18 @@ jobs:
           mkdir -p .ci/db-init
           date -u +"%Y-%m-%dT%H:%M:%SZ" > .ci/db-init/initialized.txt
 
+      # This step sets up the specified Node.js version.
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
+      # This step installs the project dependencies using npm ci, which is faster and more reliable for CI environments.
       - name: Install dependencies
         run: npm ci
 
+      # This step caches the Next.js build artifacts to speed up the build process.
       - name: Cache Next.js build artifacts
         if: matrix.node-version == '24.x'
         uses: actions/cache@v4
@@ -64,25 +85,30 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-
 
+      # This step runs the format check to ensure that the code is formatted correctly.
       - name: Run format check
         if: matrix.node-version == '24.x'
         run: npm run format
 
+      # This step runs the linter to check for code quality and potential errors.
       - name: Run lint
         run: npm run lint
 
+      # This step runs the unit tests.
       - name: Run unit tests
         if: matrix.node-version != '24.x'
         run: |
           set -o pipefail
           npm test -- --runInBand | tee jest-${{ matrix.node-version }}.log
 
+      # This step runs the unit tests with coverage.
       - name: Run unit tests with coverage
         if: matrix.node-version == '24.x'
         run: |
           set -o pipefail
           npm test -- --runInBand --coverage | tee jest-${{ matrix.node-version }}.log
 
+      # This step uploads the test coverage and logs as artifacts.
       - name: Upload coverage and logs
         if: matrix.node-version == '24.x'
         uses: actions/upload-artifact@v4
@@ -92,6 +118,7 @@ jobs:
             coverage
             jest-${{ matrix.node-version }}.log
 
+      # This step uploads the test log if a step fails.
       - name: Upload test log on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -100,6 +127,7 @@ jobs:
           path: jest-${{ matrix.node-version }}.log
           if-no-files-found: ignore
 
+      # This step builds the project.
       - name: Build project
         if: matrix.node-version == '24.x'
         run: npm run build
