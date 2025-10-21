@@ -85,6 +85,10 @@ You will be working with a variety of modern technologies, including:
 - Instrument AI feedback loops, monitoring drift, latency, and hallucination rates.
 - Conduct code reviews and provide technical mentorship.
 
+### 🤝 How do you provide mentorship within the team?
+
+Mentorship for me starts in code review, but it really clicks when we build something together. If a new teammate grabs the trade-lane caching flow, I’d sit with them on that first Fastify handler, show how the `connectRedis` helper keeps us safe when Redis hiccups, and jot down the logging and alert checks side by side. I also plan to run short “AI office hours” so folks can learn how to debug MCP prompts, trace agent telemetry, and basically learn-to-learn with the tooling instead of treating it like magic. Once they’ve got that run-through, I’d hand over a short checklist and let them take the next handler solo. My goal is for the follow-up review to be a quick thumbs-up—that’s when you know someone’s gone from “watching” to “owning.”
+
 ---
 
 ## 🤖 About the Technology
@@ -130,7 +134,7 @@ The Fastify service is responsible for delivering the 'shipments' data. It's bui
 
 ### 🤔 In layman's terms, what are Fastify, Express, and Redis in this project?
 
-In this project, you can think of the backend as being split into two smaller, specialized services that work together. This is a common approach called "microservices."
+In this project, you can think of the backend as being split into two smaller, specialized services that work together. This is a common approach called **microservices.**
 
 - **Fastify and Express:** These are like two different chefs in a kitchen. They both do a similar job—they take requests for data, prepare it, and send it back. In this project, one "chef" (Fastify) is responsible for handling all requests related to "shipments," while the other "chef" (Express) handles everything related to "trade lanes." They are both lightweight and efficient, but the project uses two different ones to demonstrate how different services can be used together.
 
