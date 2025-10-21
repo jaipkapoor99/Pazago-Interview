@@ -30,7 +30,7 @@ What drives me is growth through curiosity. Whether it’s building software, ex
 
 ### 🎯 Why should we hire you?
 
-I bring a track record of translating ambiguous AI-heavy roadmaps into production-grade services with measurable quality gates. You'll get someone who can stand up provable APIs quickly, de-risk integration with Postgres/Redis, and document the path so the rest of the team can iterate confidently.
+Because I make things. I understand this business and will build solutions—not simply write code. Point me at a trade-lane bottleneck and I’ll map the workflow, stand up the Fastify/Express endpoints, wire Postgres and Redis with the right guardrails, and prototype the agent on Qwen/DeepSeek 16B locally before we burn hosted tokens. I care less about memorising syntax and more about solving exporters’ real problems systemically.
 
 ### 📘 What is your favourite subject?
 
@@ -160,6 +160,7 @@ My sweet spot combines:
 - **Data layer pragmatism:** Postgres for transactional workloads, Redis for caching/session coordination, plus a growing toolkit around embeddings and vector search.
 - **Observability-first mindset:** Structured logging, health probes, and AI-specific metrics (latency, hallucination) baked into every service so operations stay predictable.
 - **AI enablement:** Integrating MCP servers and external research agents to inject intelligence without bloating the core runtime.
+- **Local AI ops:** Spinning up Qwen and DeepSeek 16B models on Ollama or LM Studio so we can prototype prompt flows locally before we burn tokens on hosted providers.
 
 ### 🧪 What does this demo highlight about your approach?
 

@@ -42,6 +42,8 @@ I see Pazago, the platform you’ve been building since 2021, as a fast-growing 
 
 I interpret your mission for Pazago as transforming the export experience so every order moves faster, more efficiently, and with less stress. By streamlining processes and providing visibility, your platform lets exporters save time, cut costs, and maintain stronger client relationships.
 
+That shows up even in the official ad tagline—"Ab sab export ke orders, ek hi app pe manage karo"—which captures how you promise teams a single command center for every shipment.
+
 ---
 
 ## Leadership & Founding Story 🎯
