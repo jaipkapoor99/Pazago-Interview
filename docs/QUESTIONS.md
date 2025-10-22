@@ -16,9 +16,10 @@
 - 💻 What’s the default developer hardware/OS mix, and how do you keep tooling consistent across setups?
 - 🧰 What does your current tech stack look like for AI agents and MCP servers? Any frameworks or tooling you consider must-know before joining?
 - 🤖 Which foundation models underpin your AI solutions today—closed-source western providers (OpenAI, Anthropic, Google), consumer subscriptions, or self-hosted open-source stacks like Qwen or DeepSeek?
-- 🧠 How are state management and session persistence handled for agents connected via MCP?
-- 📈 What’s your approach to scaling MCP servers and handling spikes in concurrent agent requests?
-- 🛡️ How do you authenticate and authorize agents that touch multiple internal services?
+- 🧠 How is the 'Context' (memory) feature implemented? How are state management and session persistence handled for agents connected via MCP?
+- 📈 What’s your approach to scaling MCP servers and handling spikes in concurrent agent requests, especially with features like 'Studio' generating audio content?
+- 🛡️ How do you authenticate and authorize agents that touch multiple internal services, particularly when processing sensitive financial documents?
+- 🎧 For the 'Studio' feature, what is the pipeline for converting text to high-quality, two-voice audio in regional languages? What are the technical challenges there?
 
 ## Development Workflow 🛠️
 
@@ -39,7 +40,8 @@
 
 ## Product & Domain Context 🌍
 
-- 🚢 What exporter-facing problems are the AI agents solving right now?
-- 🔮 Where do you expect agent capabilities to evolve over the next 6–12 months?
-- 📬 How does exporter feedback feed into roadmap prioritization for agent features?
-- 🧭 What domain-specific challenges make building agents for logistics/export unique?
+- 📈 The platform is currently free. What is the long-term vision for monetization, and how does that influence the technical roadmap?
+- 🔮 Where do you expect agent capabilities to evolve over the next 6–12 months? Are there plans to move beyond financial research into other areas?
+- 📬 How does user feedback from the free platform feed into roadmap prioritization for new features like 'Playbooks' and 'Actions'?
+- 🇮🇳 The focus on regional languages is a key differentiator. What are the unique technical and product challenges in supporting multiple Indian languages for both text and audio AI?
+- 📱 Provue is currently desktop-only. What are the primary challenges or considerations in developing a mobile version?

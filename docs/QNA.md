@@ -1,6 +1,6 @@
 # ❓ Frequently Asked Questions ❓
 
-This document provides answers to some of the most common questions about Pazago, Provue, their AI stack, and the Backend Developer role.
+This document provides answers to some of the most common questions about Provue, its parent company Pazago, their shared AI stack, and the Backend Developer role.
 
 ---
 
@@ -46,19 +46,19 @@ Earlier in my career, in Flexera, I pushed a feature that quietly degraded cache
 
 ---
 
-## 🏢 About Pazago
+## 🏢 About Provue & Pazago
 
-### 🤔 What is Pazago's core business?
+### 🤔 What is Provue's core business?
 
-Pazago is a company that is transforming the export-import industry. 🚢 It provides an AI-augmented operating platform that streamlines the entire export process, making it faster, more efficient, and less stressful for businesses. Intelligent workflows pair humans with copilots for documentation management, real-time order tracking, and logistics decisioning.
+Provue.ai is a **free AI-powered finance platform** designed to revolutionize financial research for the Indian market. It transforms complex financial documents into actionable insights, audiobooks, and structured workflows, helping investors make faster, more informed decisions. Its core features include **Playbooks** for distilled expert wisdom, **Actions** for instant stock analysis, **Context** for personalized AI memory, and **Studio** for audio content generation in regional languages.[1][2][3]
 
 ### 🚀 What is Pazago's mission?
 
-Pazago's mission is to make exporting as seamless as e-commerce. They want to replace manual, relationship-driven processes with structured, AI-guided systems, giving exporters predictability, transparency, and the ability to scale. 📈 By pairing automation with human oversight, they help teams graduate from spreadsheets to continuously learning trade pipelines.
+Pazago's mission is to make exporting as seamless as e-commerce. They want to replace manual, relationship-driven processes with structured, AI-guided systems, giving exporters predictability, transparency, and the ability to scale. 📈 By pairing automation with human oversight, they help teams graduate from spreadsheets to continuously learning trade pipelines. This provides the stable foundation and deep technical expertise from which innovative products like Provue can emerge.
 
 ### 🤖 What is Provue?
 
-My best guess is that Provue is an AI-powered product line by Pazago that focuses on financial research and investment intelligence. 🧠 It combines retrieval-augmented generation, analyst-grade datasets, and conversational agents so financial professionals, retail investors, and market analysts can interrogate markets through natural language.
+Provue is an AI-powered product line by Pazago that focuses on financial research and investment intelligence. 🧠 It combines retrieval-augmented generation, analyst-grade datasets, and conversational agents so financial professionals, retail investors, and market analysts can interrogate markets through natural language. It is currently free, desktop-only, and targets the Indian investment community with unique features like regional language audio content.[2][4][5]
 
 ---
 
@@ -66,7 +66,7 @@ My best guess is that Provue is an AI-powered product line by Pazago that focuse
 
 ### 🧑‍💻 What is the primary role of a Backend Developer at Provue?
 
-As a Backend Developer at Pazago (Provue), I will be responsible for building and maintaining scalable, high-performance AI agents, MCP servers, and backend services. I will work with a modern tech stack to develop robust APIs, optimize database performance, and ensure seamless integrations. 🚀
+As a Backend Developer at Pazago (Provue), I will be responsible for building and maintaining the scalable, high-performance systems that power Provue's AI features. This includes developing AI agents and MCP servers, building robust APIs for data ingestion and insight delivery, optimizing database performance (including vector databases), and ensuring seamless integrations between the AI, data, and user-facing components. 🚀
 
 ### 🛠️ What are the key technologies I would be working with?
 
@@ -74,16 +74,16 @@ You will be working with a variety of modern technologies, including:
 
 - **Languages:** Node.js
 - **Frameworks:** Fastify, Express.js
-- **Databases:** PostgreSQL, Redis, and vector databases
-- **Other:** AI/ML integration, MCP servers, Docker, and microservices.
+- **Databases:** PostgreSQL, Redis, and vector databases for AI context and memory.
+- **Other:** AI/ML integration, MCP servers, Docker, and microservices to support features like Playbooks, Actions, and Studio.
 
 ### ✅ What are some of the key responsibilities?
 
-- Develop, test, and maintain AI agents and MCP servers.
-- Design and implement scalable, secure, and high-performance applications.
-- Implement authentication, authorization, and security best practices.
-- Instrument AI feedback loops, monitoring drift, latency, and hallucination rates.
-- Conduct code reviews and provide technical mentorship.
+- Develop, test, and maintain the AI agents and MCP servers that drive Provue's analytical capabilities.
+- Design and implement scalable, secure, and high-performance applications for financial data processing and delivery.
+- Implement authentication, authorization, and security best practices to protect sensitive financial data.
+- Instrument AI feedback loops, monitoring drift, latency, and hallucination rates to ensure the reliability of financial insights.
+- Conduct code reviews and provide technical mentorship to build a culture of engineering excellence.
 
 ### 🤝 How do you provide mentorship within the team?
 
