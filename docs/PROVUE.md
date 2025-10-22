@@ -15,7 +15,7 @@ I see Pazago, the platform you’ve been building since 2021, as a fast-growing 
 ### Basic Information 📇
 
 - I learned you founded Pazago in 2021.
-- I noted that you anchor Pazago in Mumbai, India with a secondary presence in San Francisco, California.
+- I noted that you have your main branch Pazago in Mumbai, Maharashtra, India with a secondary presence in San Francisco, California, US.
 - I found that you’ve grown the team to somewhere between 51 and 200 people.
 - I saw you positioning Pazago in an active Seed VC stage.
 - I captured General Catalyst India as one of your key investors.
@@ -27,7 +27,7 @@ I see Pazago, the platform you’ve been building since 2021, as a fast-growing 
 
 ### Corporate Footprint 🌍
 
-- I mapped your Mumbai headquarters to The Summit Business Park/Business Bay, Andheri East—just a couple of minutes from the Western Express Highway Metro.
+- I mapped your Mumbai headquarters to The Summit Business Park/Business Bay, Andheri East—just a few minutes from the Western Express Highway Metro.
 - I logged your Bangalore address on Shakar Nagar’s Tapasya building for the operational team.
 - I captured your San Francisco presence at 2261 Market Street #4926 so I can reference the U.S. footprint when needed.
 - I noted the GST records listing you alongside Shankar Lal Gidra as business owners—useful context when discussing compliance paperwork.
@@ -527,6 +527,7 @@ I resonate with your goal of removing friction so global trade feels as seamless
 - I check updates on Instagram at [@pazagohq](https://www.instagram.com/pazagohq/).
 - I have your contact email noted as [connect@pazago.com](mailto:connect@pazago.com).
 - I browse the Provue platform you launched at [provue.ai](https://www.provue.ai/).
+- I capture my ongoing market and product notes on *The Subversive Writer*—tagline "Literary Anarchy"—at [jaipkapoor99-blog.vercel.app](https://jaipkapoor99-blog.vercel.app/), which I can reference for deeper dives into trends and experiments relevant to Provue.
 
 ### Recent Content & Thought Leadership 📰
 
