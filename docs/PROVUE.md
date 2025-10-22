@@ -42,7 +42,7 @@ I see Provue as an innovative AI-powered platform poised to transform financial 
 
 I interpret your mission for Pazago as transforming the export experience so every order moves faster, more efficiently, and with less stress. By streamlining processes and providing visibility, your platform lets exporters save time, cut costs, and maintain stronger client relationships.
 
-That shows up even in the official ad tagline—"Ab sab export ke orders, ek hi app pe manage karo"—which captures how you promise teams a single command center for every shipment.
+That shows up even in the official ad tagline—Ab sab export ke orders, ek hi app pe manage karo—which captures how you promise teams a single command center for every shipment.
 
 ---
 
@@ -59,7 +59,7 @@ That shows up even in the official ad tagline—"Ab sab export ke orders, ek hi 
 
 ### Your Vision 🔭
 
-I learned that you built Pazago after repeatedly hearing exporters describe global trade as unnecessarily complex, unpredictable, and friction-filled. You want to replace relationship-driven manual processes with structured, data-driven systems. I appreciated how you and the founding crew spent months shadowing exporters, mapping every workflow before touching code so the platform could flex to the industry’s messy realities. Your mantra—making exporting “as seamless as e-commerce”—now anchors the roadmap and keeps the whole company aimed at predictability, transparency, and scale.
+I learned that you built Pazago after repeatedly hearing exporters describe global trade as unnecessarily complex, unpredictable, and friction-filled. You want to replace relationship-driven manual processes with structured, data-driven systems. I appreciated how you and the founding crew spent months shadowing exporters, mapping every workflow before touching code so the platform could flex to the industry’s messy realities. Your mantra—making exporting as seamless as e-commerce—now anchors the roadmap and keeps the whole company aimed at predictability, transparency, and scale.
 
 ### Leadership Philosophy 🤝
 
@@ -82,59 +82,59 @@ I appreciate your belief that every team member should feel like a stakeholder: 
 
 ### What is Provue.ai?
 
-Provue.ai is an emerging **free AI-powered finance platform** transforming financial research for the Indian market. It converts complex financial documents into actionable insights, audiobooks, and structured workflows, enabling investors to make faster, more informed decisions. The platform addresses the critical pain point of information overload from earnings reports, IPO documents, and financial statements.[1][2][3]
+Provue.ai is an emerging **free AI-powered finance platform** transforming financial research for the Indian market. It converts complex financial documents into actionable insights, audiobooks, and structured workflows, enabling investors to make faster, more informed decisions. The platform addresses the critical pain point of information overload from earnings reports, IPO documents, and financial statements.
 
 ### Core Features and Functionality
 
 **Playbooks** 📘
 
-Playbooks provide **5-minute distilled wisdom** from financial experts. These pre-built templates turn complex data into clear action plans for company earnings analysis, market insights, and strategic frameworks.[4][5][6]
+Playbooks provide **5-minute distilled wisdom** from financial experts. These pre-built templates turn complex data into clear action plans for company earnings analysis, market insights, and strategic frameworks.
 
 **Actions** ⚡
 
-Actions enable users to run **structured stock or IPO analyses instantly**. This feature allows for on-demand deep dives into specific companies, breaking down financial information into digestible, actionable segments.[6][4]
+Actions enable users to run **structured stock or IPO analyses instantly**. This feature allows for on-demand deep dives into specific companies, breaking down financial information into digestible, actionable segments.
 
 **Context (Memory Feature)** 🗂️
 
-Context is Provue's personalized intelligence layer—a **memory system that builds user-specific knowledge**. It remembers previous analyses and preferences, allowing users to upload documents to create a persistent knowledge base for the AI to reference.[5][6]
+Context is Provue's personalized intelligence layer—a **memory system that builds user-specific knowledge**. It remembers previous analyses and preferences, allowing users to upload documents to create a persistent knowledge base for the AI to reference.
 
 **Studio (Audio Generation)** 🎙️
 
-Studio **converts research materials into podcasts or audiobooks** in multiple languages, including regional Indian languages (Hindi, Tamil, Bengali, Marathi). It uses high-quality Indian voice clarity to create two-voice conversational podcasts from prompts, links, or documents in one click.[7][5][6]
+Studio **converts research materials into podcasts or audiobooks** in multiple languages, including regional Indian languages (Hindi, Tamil, Bengali, Marathi). It uses high-quality Indian voice clarity to create two-voice conversational podcasts from prompts, links, or documents in one click.
 
 **James (AI Assistant)** 🤖
 
-James is Provue's conversational AI assistant for earnings analysis and interactive queries. Users can chat with James for instant insights, applying expert frameworks to their investment strategies.[2][4]
+James is Provue's conversational AI assistant for earnings analysis and interactive queries. Users can chat with James for instant insights, applying expert frameworks to their investment strategies.
 
 ### Key Differentiators
 
 **Speed and Efficiency** ⏱️
 
-Provue's primary differentiator is **time compression**, reducing hours of research into minutes by automating the extraction, analysis, and synthesis of financial information.[4][6][5][2]
+Provue's primary differentiator is **time compression**, reducing hours of research into minutes by automating the extraction, analysis, and synthesis of financial information.
 
 **Regional Language Support** 🇮🇳
 
-Unlike most financial platforms, Provue.ai offers **multi-language support**, democratizing access to quality financial research for non-English speakers in India.[9][7]
+Unlike most financial platforms, Provue.ai offers **multi-language support**, democratizing access to quality financial research for non-English speakers in India.
 
 **Audio Content Generation** 🎧
 
-The Studio feature's ability to **convert financial research into podcasts and audiobooks** is unique, catering to users who prefer auditory learning.[6][5][7]
+The Studio feature's ability to **convert financial research into podcasts and audiobooks** is unique, catering to users who prefer auditory learning.
 
 **Zero Cost** 💰
 
-Being **completely free** positions Provue.ai as an accessible alternative to expensive research platforms, removing financial barriers for retail investors.[4][6][2]
+Being **completely free** positions Provue.ai as an accessible alternative to expensive research platforms, removing financial barriers for retail investors.
 
 **Context Retention** 🧠
 
-The platform's **memory feature (Context)** creates a personalized research environment that learns from user interactions and maintains continuity across sessions.[6]
+The platform's **memory feature (Context)** creates a personalized research environment that learns from user interactions and maintains continuity across sessions.
 
 ### Comparison with Competitors
 
 In the Indian financial research space, Provue.ai competes with established platforms like:
 
-- **Screener.in**: Known for reliability but lacks AI-powered analysis and audio features.[11][13]
-- **Trendlyne**: Offers AI-based stock screeners but requires paid subscriptions for advanced features.[13][8][11]
-- **MarketSmith India**: Provides CANSLIM-based AI models focused on growth stock identification.[8]
+- **Screener.in**: Known for reliability but lacks AI-powered analysis and audio features.
+- **Trendlyne**: Offers AI-based stock screeners but requires paid subscriptions for advanced features.
+- **MarketSmith India**: Provides CANSLIM-based AI models focused on growth stock identification.
 
 Provue distinguishes itself by combining **stock screening, earnings analysis, IPO evaluation, audio content creation, and personalized memory** in a single free platform.
 
@@ -341,7 +341,7 @@ Based on what I gathered, Pazago leans on a modern stack.
 ## Impact & Sustainability 🌿
 
 - I note that you’ve already grown direct headcount past 100 while enabling thousands of exporter jobs through better processes.
-- I keep the “Make in India” tie-in ready because you’ve positioned Pazago as a lever for small and mid-sized manufacturers to go global.
+- I keep the Make in India tie-in ready because you’ve positioned Pazago as a lever for small and mid-sized manufacturers to go global.
 - I like how you frame digital documentation, route optimization, and shipment consolidation as both operational efficiency and carbon footprint reduction.
 - I call out your remote collaboration tooling and real-time monitoring as proof that exporters can shrink travel, waste, and spoilage.
 
@@ -361,7 +361,7 @@ I keep hearing exporters describe fragmented workflows, misplaced documentation,
 
 ### Pazago’s Solution 🔧
 
-I appreciated how your team phrased it: you decoded the “export order recipe,” enabling a smooth journey from origin to destination. I interpret this as helping exporters focus on growth while you orchestrate the logistics, paperwork, and coordination.
+I appreciated how your team phrased it: you decoded the export order recipe, enabling a smooth journey from origin to destination. I interpret this as helping exporters focus on growth while you orchestrate the logistics, paperwork, and coordination.
 
 ---
 
@@ -426,7 +426,7 @@ I resonate with your goal of removing friction so global trade feels as seamless
 #### About Culture 🎭
 
 1. I plan to ask how decision-making works in the non-hierarchical setup you’ve created.
-2. I want to know what “move fast and iterate” means day-to-day for you.
+2. I want to know what move fast and iterate means day-to-day for you.
 3. I’m curious how you balance speed with code quality and testing.
 
 #### About Growth 📈
@@ -442,7 +442,7 @@ I resonate with your goal of removing friction so global trade feels as seamless
 - I’ll connect my competitive programming background to my problem-solving ability.
 - I’ll emphasize my full-stack experience and appreciation for complete systems.
 - I’ll show how much I care about building scalable, efficient solutions.
-- I’ll demonstrate alignment with a “move fast, iterate” culture.
+- I’ll demonstrate alignment with a move fast, iterate culture.
 
 ---
 
@@ -474,7 +474,7 @@ I resonate with your goal of removing friction so global trade feels as seamless
 - I check updates on Instagram at [@pazagohq](https://www.instagram.com/pazagohq/).
 - I have your contact email noted as [connect@pazago.com](mailto:connect@pazago.com).
 - I browse the Provue platform you launched at [provue.ai](https://www.provue.ai/).
-- I capture my ongoing market and product notes on *The Subversive Writer*—tagline "Literary Anarchy"—at [jaipkapoor99-blog.vercel.app](https://jaipkapoor99-blog.vercel.app/), which I can reference for deeper dives into trends and experiments relevant to Provue.
+- I capture my ongoing market and product notes on *The Subversive Writer*—Literary Anarchy—at [jaipkapoor99-blog.vercel.app](https://jaipkapoor99-blog.vercel.app/), which I can reference for deeper dives into trends and experiments relevant to Provue.
 
 ### Recent Content & Thought Leadership 📰
 

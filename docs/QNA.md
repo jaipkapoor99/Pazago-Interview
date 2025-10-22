@@ -26,11 +26,12 @@ What drives me is growth through curiosity. Whether it’s building software, ex
 ### 🧱 What are two weaknesses you're working on?
 
 - I can over-index on polishing internal tooling; I now time-box those detours and demo value early to be sure the effort is warranted.
-- I'm less experienced with native mobile stacks, so I partner closely with frontend/mobile peers and invest time in design docs that bridge the gap. I'm currently learning React Native
+- I'm less experienced with native mobile stacks, so I partner closely with frontend/mobile peers and invest time in design docs that bridge the gap. I'm currently learning React Native.
+- While I have a solid working understanding of how to use MCP servers to integrate AI agents, I'm still learning the low-level implementation details under the hood.
 
 ### 🎯 Why should we hire you?
 
-Because I make things. I understand this business and will build solutions—not simply write code. Point me at a trade-lane bottleneck and I’ll map the workflow, stand up the Fastify/Express endpoints, wire Postgres and Redis with the right guardrails, and prototype the agent on Qwen/DeepSeek 16B locally before we burn hosted tokens. I care less about memorising syntax and more about solving exporters’ real problems systemically.
+Because I **make** things. I understand this business and will build solutions—not simply write code. Point me at a trade-lane bottleneck and I’ll map the workflow, stand up the Fastify/Express endpoints, wire Postgres and Redis with the right guardrails, and prototype the agent on Qwen/DeepSeek 16B locally before we burn hosted tokens. I care less about memorising syntax and more about solving exporters’ real problems systemically.
 
 ### 📘 What is your favourite subject?
 
@@ -50,15 +51,11 @@ Earlier in my career, in Flexera, I pushed a feature that quietly degraded cache
 
 ### 🤔 What is Provue's core business?
 
-Provue.ai is a **free AI-powered finance platform** designed to revolutionize financial research for the Indian market. It transforms complex financial documents into actionable insights, audiobooks, and structured workflows, helping investors make faster, more informed decisions. Its core features include **Playbooks** for distilled expert wisdom, **Actions** for instant stock analysis, **Context** for personalized AI memory, and **Studio** for audio content generation in regional languages.[1][2][3]
+Provue.ai is a **free AI-powered finance platform** designed to revolutionize financial research for the Indian market. It transforms complex financial documents into actionable insights, audiobooks, and structured workflows, helping investors make faster, more informed decisions. Its core features include **Playbooks** for distilled expert wisdom, **Actions** for instant stock analysis, **Context** for personalized AI memory, and **Studio** for audio content generation in regional languages.
 
 ### 🚀 What is Pazago's mission?
 
 Pazago's mission is to make exporting as seamless as e-commerce. They want to replace manual, relationship-driven processes with structured, AI-guided systems, giving exporters predictability, transparency, and the ability to scale. 📈 By pairing automation with human oversight, they help teams graduate from spreadsheets to continuously learning trade pipelines. This provides the stable foundation and deep technical expertise from which innovative products like Provue can emerge.
-
-### 🤖 What is Provue?
-
-Provue is an AI-powered product line by Pazago that focuses on financial research and investment intelligence. 🧠 It combines retrieval-augmented generation, analyst-grade datasets, and conversational agents so financial professionals, retail investors, and market analysts can interrogate markets through natural language. It is currently free, desktop-only, and targets the Indian investment community with unique features like regional language audio content.[2][4][5]
 
 ---
 
@@ -216,4 +213,4 @@ Pazago has raised a $3.5M seed round led by General Catalyst India and is a Y Co
 
 ### 🗺️ Where is the company located?
 
-Pazago is headquartered in **Mumbai, India**, with a secondary presence in **San Francisco, California.** 🌍 The distributed footprint lets product, AI research, and platform engineering teams follow-the-sun while staying close to customers.
+Pazago is headquartered in **Mumbai, Maharashtra, India**, with a secondary presence in **San Francisco, California, USA.** 🌍 The distributed footprint lets product, AI research, and platform engineering teams follow-the-sun while staying close to customers.

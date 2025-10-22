@@ -3,9 +3,9 @@
 ## Role Expectations 🎯
 
 - 🗓️ What would a typical first 30–60 days look like for someone joining this role?
-- 🆕 How much of the work is net-new agent/MCP development versus sustaining the existing stack?
+- 🆕 What is the immediate short-term goal in this position?
 - 🏁 What does success in the first six months look like from your perspective?
-- 🧪 Is there anything you’d want me to prep ahead of time so onboarding is smoother?
+- 🧪 What does the onboarding process consist of?
 
 ## Workstyle & Collaboration 👥
 
@@ -14,19 +14,22 @@
 ## Technical Architecture & Stack ⚙️
 
 - 💻 What’s the default developer hardware/OS mix, and how do you keep tooling consistent across setups?
-- 🧰 What does your current tech stack look like for AI agents and MCP servers? Any frameworks or tooling you consider must-know before joining?
-- 🤖 Which foundation models underpin your AI solutions today—closed-source western providers (OpenAI, Anthropic, Google), consumer subscriptions, or self-hosted open-source stacks like Qwen or DeepSeek?
-- 🧠 How is the 'Context' (memory) feature implemented? How are state management and session persistence handled for agents connected via MCP?
-- 📈 What’s your approach to scaling MCP servers and handling spikes in concurrent agent requests, especially with features like 'Studio' generating audio content?
-- 🛡️ How do you authenticate and authorize agents that touch multiple internal services, particularly when processing sensitive financial documents?
-- 🎧 For the 'Studio' feature, what is the pipeline for converting text to high-quality, two-voice audio in regional languages? What are the technical challenges there?
+- 🧰 What does your current tech stack look like for the AI agent infrastructure? Any frameworks or tooling you consider must-know before joining?
+- 🤖 Which foundation models underpin your AI solutions today—closed-source western providers (OpenAI, Anthropic, Google), or self-hosted open-source stacks like Qwen or DeepSeek?
+- 🧬 Are Provue's models fine-tuned with proprietary data, or are they primarily prompt-engineered from base weights?
+- 🧠 How is the 'Context' (memory) feature implemented? How are state management and session persistence handled for AI agents?
+- 🎧 For the 'Studio' feature, what is the pipeline for converting text to high-quality, two-voice audio, particularly in regional languages? What are the technical challenges there?
+
+## Scaling & Reliability 📈
+
+- 📈 What’s your approach to scaling the AI backend and handling spikes in concurrent agent requests, especially with features like 'Studio' generating audio content?
+- 🔍 What observability or debugging tools are in place for tracking AI agent performance and traffic?
 
 ## Development Workflow 🛠️
 
 - 🛤️ What does the path from feature idea to production deployment look like?
-- ⚖️ How do you balance building new agent capabilities with maintaining existing MCP services and APIs?
-- 🔍 What observability or debugging tools are in place for tracking agent performance and MCP traffic?
-- ✅ How do you approach testing strategy for agents and MCP endpoints—unit, integration, end-to-end?
+- ⚖️ How do you balance building new agent capabilities with maintaining the existing AI services and APIs?
+- ✅ How do you approach testing strategy for AI agents and their endpoints—unit, integration, end-to-end?
 
 ## Compensation & Benefits 💸
 
@@ -35,7 +38,6 @@
 
 ## Team & Support 🤝
 
-- 🚀 How do new engineers ramp up on MCP servers and AI agent work—any internal playbooks or mentorship loops I should prepare for?
 - 🔄 Are there standing rituals (demos, retros, guilds) that keep the Fastify, Express, and Next.js streams aligned?
 
 ## Product & Domain Context 🌍
