@@ -42,7 +42,7 @@ We are looking for a skilled **Backend Developer** to join our dynamic team. As 
 - Strong problem-solving skills and debugging capabilities.
 - Knowledge of **Monolithic**, **microservices** and **distributed systems**.
 - Experience with **Test Driven Development**.
-- Experience with distributed catching with **Redis**.
+- Experience with distributed caching with **Redis**.
 - Experience with **AI/ML integration** is a big plus.
 - Experience with **vector databases** is a big plus.
 
