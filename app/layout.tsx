@@ -9,7 +9,9 @@ export const metadata = {
   description: "Interview-ready demo showcasing Fastify + Express + PostgreSQL"
 };
 
+// Root layout runs on the server so we can embed auth state into shared chrome.
 const RootLayout = async ({ children }: { children: ReactNode }) => {
+  // Retrieve the session upfront to keep header auth controls in sync on first paint.
   const session = await getServerAuthSession();
 
   return (

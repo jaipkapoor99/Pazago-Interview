@@ -7,6 +7,7 @@ type AuthControlsProps = {
   userName?: string | null;
 };
 
+// Toggle between sign-in and sign-out flows depending on the current session.
 const AuthControls = ({ isAuthenticated, userName }: AuthControlsProps) => {
   if (isAuthenticated) {
     return (

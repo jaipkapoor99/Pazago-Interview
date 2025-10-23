@@ -2,9 +2,11 @@ import { redirect } from "next/navigation";
 import { getServerAuthSession } from "@/auth";
 
 const IntelPage = async () => {
+  // Lock the intel route behind authentication before rendering sensitive copy.
   const session = await getServerAuthSession();
 
   if (!session) {
+    // Redirect unauthenticated visitors to NextAuth's sign-in flow.
     redirect("/api/auth/signin?callbackUrl=/intel");
   }
 
