@@ -346,7 +346,7 @@ Based on what I gathered, Pazago leans on a modern stack.
 - I check updates on Instagram at [@pazagohq](https://www.instagram.com/pazagohq/).
 - I have your contact email noted as [connect@pazago.com](mailto:connect@pazago.com).
 - I browse the Provue platform you launched at [provue.ai](https://www.provue.ai/).
-- I capture my ongoing market and product notes on *The Subversive Writer*—Literary Anarchy—at [jaipkapoor99-blog.vercel.app](https://jaipkapoor99-blog.vercel.app/), which I can reference for deeper dives into trends and experiments relevant to Provue.
+- I capture my ongoing market and product notes on _The Subversive Writer_—Literary Anarchy—at [jaipkapoor99-blog.vercel.app](https://jaipkapoor99-blog.vercel.app/), which I can reference for deeper dives into trends and experiments relevant to Provue.
 
 ### Recent Content & Thought Leadership 📰
 
