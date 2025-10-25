@@ -1,6 +1,6 @@
 # Provue - Product Research Report 📘
 
-Nikhil, I pulled these notes together to guide our Provue conversation on October 23, 2025. Everything here reflects what I’ve learned, inferred, or plan to emphasize so you can see exactly how I’m thinking about Provue and the problems you’re tackling.
+This document provides a comprehensive overview and analysis of Provue, a product by Pazago.
 
 ---
 
@@ -18,22 +18,30 @@ Pazago, founded in 2021, is the company behind Provue. Its mission is to transfo
 
 ## Leadership & Founding Story 🎯
 
-### Founder: Nikhil Agrawal 🌟
+### Founder: Hardik Prajapati 🌟
 
-- I observed that you’re a Y Combinator alumnus (W21) and a three-time startup founder.
-- I found the following past roles particularly relevant:
-  - I noticed your 2020 stint at Credit Karma as a Software Engineer on an iOS app serving 85+ million users.
-  - I saw that you co-founded Alinea in 2020-2021, served as CTO, hit 30% MoM growth, and shipped the first product in 31 days.
-  - I noted your participation in the On Deck Fellowship (ODF 11).
-- I recorded your academic background as a Bachelor’s in Business Management from Jain (Deemed-to-be University) between 2013 and 2016, a Business Management program at King’s College London during 2016-2017, and a Master’s in Computer Science from Northeastern University completed in 2021.
+- **Role:** Head of Engineering, founding engineer, and first employee at Pazago (since Oct 2021, Mumbai/Bengaluru, India).  
+- **Leadership:** Built and grew the engineering team from 0 to 20+ members, managed hiring, and led performance evaluations.  
+- **Product Building:** Key architect in launching Pazago’s core products—precize and pazago.com—shaping technical vision from MVP to products now serving 10,000+ Daily Active Users (DAU).
+- **Tech Stack:** Built and maintained the full cloud infrastructure on AWS, ensuring robust back-end foundations and reliability.
+- **System Architecture:** Led architectural decisions for long-term scalability, performance, and reliability.
+- **Backend & Automation:** Automated critical backend processes, resulting in significant reductions in processing time and increased efficiency.
+- **Cross-functional Collaboration:** Fostered a collaborative environment uniting engineering with business goals, stakeholders, and vendors.
+- **Export Tech Impact:** Developed technology to minimize exporter pain-points: reduced manual operations, streamlined documentation, minimized shipment delays, automated compliance, and improved operational visibility for exporters.
+- **Third-party Integrations:** Oversaw third-party integrations, vendor relationships, and ensured optimal use of external services and APIs.
 
-### Your Vision 🔭
+**Summary:**  
+Hardik drove Pazago’s entire technical journey, scaling both team and products, building everything from core infrastructure and automation to customer-facing solutions that simplify export operations for India’s exporters.[1]
 
-I learned that you built Pazago after repeatedly hearing exporters describe global trade as unnecessarily complex, unpredictable, and friction-filled. You want to replace relationship-driven manual processes with structured, data-driven systems. Your mantra—making exporting as seamless as e-commerce—now anchors the roadmap and keeps the whole company aimed at predictability, transparency, and scale.
+[1](https://www.linkedin.com/in/hardikmp/)
+
+### Pazago's Vision 🔭
+
+It is understood that Pazago was built after repeatedly hearing exporters describe global trade as unnecessarily complex, unpredictable, and friction-filled. The company aims to replace relationship-driven manual processes with structured, data-driven systems. The mantra—making exporting as seamless as e-commerce—now anchors the roadmap and keeps the whole company aimed at predictability, transparency, and scale.
 
 ### Leadership Philosophy 🤝
 
-I appreciate your belief that every team member should feel like a stakeholder: move fast, iterate, take calculated risks, and challenge the status quo.
+The company believes that every team member should feel like a stakeholder: move fast, iterate, take calculated risks, and challenge the status quo.
 
 ### Funding & Investors 💸
 
@@ -107,53 +115,53 @@ Based on what I gathered, Pazago leans on a modern stack.
 
 ### Backend Technologies 🧱
 
-- I saw you list Node.js as the primary language and a must-have.
-- I noticed you leaning on frameworks like Fastify and Express.js.
-- I logged your database usage across PostgreSQL, MongoDB, Redis, and vector databases for AI needs.
-- I recognized your preference for message queues such as RabbitMQ and Kafka.
-- I noted your emphasis on OAuth and JWT for authentication.
-- I captured that your team relies on RESTful services and GraphQL.
-- I call out the API-first approach you talk about in decks so we can riff on integration strategy quickly.
+- Node.js is listed as the primary language and a must-have.
+- The company leans on frameworks like Fastify and Express.js.
+- Database usage spans across PostgreSQL, MongoDB, Redis, and vector databases for AI needs.
+- There is a preference for message queues such as RabbitMQ and Kafka.
+- Emphasis is placed on OAuth and JWT for authentication.
+- The team relies on RESTful services and GraphQL.
+- An API-first approach is a key part of the integration strategy.
 
 ### Frontend Technologies 🎨
 
-- I observed you using React, Next.js, and NestJS.
-- I noticed you referencing Tailwind CSS for styling.
-- I keep in mind that you extend the experience to Android and iOS so we can cover mobile parity if it comes up.
+- The frontend stack includes React, Next.js, and NestJS.
+- Tailwind CSS is used for styling.
+- The user experience extends to Android and iOS to ensure mobile parity.
 
 ### Infrastructure & DevOps ⚙️
 
-- I learned about the Docker-based containerization you’ve adopted.
-- I noticed your focus on microservices and distributed systems.
-- I saw you highlighting Test Driven Development.
-- I noted the CI/CD pipeline you’ve mentioned alongside infrastructure-as-code so we can talk release cadence.
+- Docker-based containerization has been adopted.
+- There is a focus on microservices and distributed systems.
+- Test Driven Development is highlighted.
+- A CI/CD pipeline is in place alongside infrastructure-as-code to manage release cadence.
 
 ### AI/ML Technologies 🧠
 
-- I noted your focus on building scalable, high-performance AI agents.
-- I learned you operate using MCP (Model Context Protocol) servers for agent integration.
-- I recorded your use of vector databases for AI features.
-- I noticed you leaning on Python frameworks like Flask and FastAPI to support AI/ML components.
-- I took note of the AI-driven analytics you surface back to exporters so we can speak to KPI dashboards and alerting.
+- The focus is on building scalable, high-performance AI agents.
+- The company operates using MCP (Model Context Protocol) servers for agent integration.
+- Vector databases are used for AI features.
+- Python frameworks like Flask and FastAPI support AI/ML components.
+- AI-driven analytics are surfaced back to exporters through KPI dashboards and alerting.
 
 ### Development Tools 🧰
 
-- I captured Git and GitHub as core tools for your team.
-- I saw you relying on Postman for API work.
-- I noted collaboration tools such as Asana, Trello, and Toggl in your stack.
-- I noticed marketing-oriented tools like Google Search Console, Mailchimp, Braze, WordPress, and SEMrush supporting your GTM motion.
+- Git and GitHub are core tools for the team.
+- Postman is used for API work.
+- Collaboration tools such as Asana, Trello, and Toggl are in the stack.
+- Marketing-oriented tools like Google Search Console, Mailchimp, Braze, WordPress, and SEMrush support the GTM motion.
 
 ### Security & Compliance Posture 🛡️
 
-- I flagged the ISO27001, SOC2, and GDPR compliance posture you lead with when buyers ask about procurement hurdles.
-- I noted your investment in 2FA, encryption across the stack, and NSG segmentation so I can answer architecture questions quickly.
-- I keep the blockchain-backed claims automation example handy because it shows how far you’re willing to go for auditability.
+- The company leads with an ISO27001, SOC2, and GDPR compliance posture.
+- There is an investment in 2FA, encryption across the stack, and NSG segmentation.
+- A blockchain-backed claims automation example is available to demonstrate auditability.
 
 ### Integration & Mobility 🔌
 
-- I recorded the way you integrate IoT sensors for temperature and humidity monitoring, keeping high-risk cargo within spec.
-- I saw you positioning mobile apps on both stores with instant notifications, full document access, and payment controls.
-- I noted your use of API-driven architecture to plug into forwarders, customs brokers, and finance partners without manual swivel-chair work.
+- IoT sensors are integrated for temperature and humidity monitoring, keeping high-risk cargo within spec.
+- Mobile apps are available on both stores with instant notifications, full document access, and payment controls.
+- An API-driven architecture is used to plug into forwarders, customs brokers, and finance partners without manual swivel-chair work.
 
 ---
 
@@ -161,61 +169,53 @@ Based on what I gathered, Pazago leans on a modern stack.
 
 ### Position Details 📝
 
-- I am targeting Job Code P077/2025 within your Product & Engineering group.
-- I saw you set the experience range between three to five years.
-- I confirmed you made the role full-time.
-- I noted you’re basing it in Mumbai (Andheri East, two minutes from the Western Express Highway Metro).
+- Job Code P077/2025 within the Product & Engineering group.
+- The experience range is set between three to five years.
+- The role is full-time.
+- It is based in Mumbai (Andheri East, two minutes from the Western Express Highway Metro).
 
 ### Key Responsibilities 📌
 
 #### AI & Innovation Focus 🤖
 
-- I expect to develop, test, and maintain AI agents and MCP servers.
-- I’ll be responsible for building scalable, high-performance AI agents.
-- I plan to integrate AI/ML capabilities into backend services.
+- Develop, test, and maintain AI agents and MCP servers.
+- Build scalable, high-performance AI agents.
+- Integrate AI/ML capabilities into backend services.
 
 #### Backend Development 🔧
 
-- I will develop, test, and maintain backend services, APIs, and databases.
-- I’ll design secure, high-performance applications with scalability in mind.
-- I need to optimize performance and troubleshoot issues quickly.
-- I’ll collaborate with frontend engineers to connect user-facing features to backend logic.
+- Develop, test, and maintain backend services, APIs, and databases.
+- Design secure, high-performance applications with scalability in mind.
+- Optimize performance and troubleshoot issues quickly.
+- Collaborate with frontend engineers to connect user-facing features to backend logic.
 
 #### Security & Best Practices 🛡️
 
-- I’ll implement authentication, authorization, and security best practices.
-- I plan to write clean, maintainable, and well-documented code.
-- I’ll participate in code reviews and provide mentorship where possible.
+- Implement authentication, authorization, and security best practices.
+- Write clean, maintainable, and well-documented code.
+- Participate in code reviews and provide mentorship where possible.
 
 ### Required Qualifications 🎓
 
 #### Must-Have ✅
 
-- I bring strong Node.js experience.
-- I’m comfortable with frameworks such as Fastify and Express.js.
-- I have hands-on experience with relational and non-relational databases like PostgreSQL.
-- I’m confident with API design principles, REST, and GraphQL.
-- I understand OAuth, JWT, and related authentication mechanisms.
-- I describe myself as a strong problem solver with solid debugging skills.
-- I know my way around monolithic, microservices, and distributed architectures.
-- I have experience with Test Driven Development.
-- I’ve used Redis for distributed caching.
+- Strong Node.js experience.
+- Comfortable with frameworks such as Fastify and Express.js.
+- Hands-on experience with relational and non-relational databases like PostgreSQL.
+- Confident with API design principles, REST, and GraphQL.
+- Understands OAuth, JWT, and related authentication mechanisms.
+- A strong problem solver with solid debugging skills.
+- Knows their way around monolithic, microservices, and distributed architectures.
+- Experience with Test Driven Development.
+- Used Redis for distributed caching.
 
 #### Preferred / Big Plus 🌟
 
-- I’ve explored RabbitMQ and Kafka and can speak to that experience.
-- I am actively learning to integrate AI/ML features.
-- I am experimenting with vector databases and can discuss my progress.
+- Explored RabbitMQ and Kafka and can speak to that experience.
+- Actively learning to integrate AI/ML features.
+- Experimenting with vector databases and can discuss progress.
 
-### Why This Role Fits Me ❤️
 
-- I have production-ready Node.js expertise.
-- I’ve worked extensively with PostgreSQL and Dockerized setups.
-- I’ve been integrating and experimenting with local LLMs and AI models.
-- I’ve delivered end-to-end products, giving me full-stack awareness.
-- I bring a mindset aligned with modern tooling, authentication, and secure design.
-- I enjoy problem solving, reinforced by my competitive programming background on LeetCode and Codeforces.
-- I respect Test Driven Development and understand how to apply it.
 
 ---
 
@@ -223,117 +223,60 @@ Based on what I gathered, Pazago leans on a modern stack.
 
 ### Culture Highlights 🎉
 
-- I prepare for the dynamic, non-hierarchical startup culture you’ve engineered.
-- I anticipate the fast-paced, target-driven environment you run.
-- I embrace the strong ownership mentality you expect.
-- I plan to move fast, iterate, and take calculated risks alongside your team.
-- I share your belief that challenging the status quo drives innovation.
-- I consider this culture a great fit for someone eager to make an impact with you.
+- A dynamic, non-hierarchical startup culture.
+- A fast-paced, target-driven environment.
+- A strong ownership mentality is expected.
+- The team is encouraged to move fast, iterate, and take calculated risks.
+- Challenging the status quo is believed to drive innovation.
+- The culture is a great fit for someone eager to make an impact.
 
 ### Office Location 📍
 
-- I noted that your Mumbai office sits in Andheri East, just two minutes from the Western Express Highway Metro.
+- The Mumbai office is located in Andheri East, just two minutes from the Western Express Highway Metro.
 
 ### Company Stage & Growth 🌱
 
-- I see you in an active growth phase.
-- I noted that your transaction volume is rising and the revenue model is strengthening.
-- I learned that your five-year vision involves becoming billion-dollar trade infrastructure.
-- I appreciate your mission to support thousands of exporters with certainty and efficiency.
+- The company is in an active growth phase.
+- Transaction volume is rising and the revenue model is strengthening.
+- The five-year vision involves becoming billion-dollar trade infrastructure.
+- The mission is to support thousands of exporters with certainty and efficiency.
 
 ### Perks & Benefits 🎁
 
-- I enjoy the informal dress code you promote.
-- I value the learning and growth opportunities you provide.
-- I welcome the exposure to cutting-edge AI/ML technologies you’re investing in.
-- I noticed you offer certificates of completion for certain programs.
+- An informal dress code.
+- Learning and growth opportunities.
+- Exposure to cutting-edge AI/ML technologies.
+- Certificates of completion for certain programs.
 
 ---
 
 ## Recent Achievements & Milestones 🏆
 
-- **Provue Launch:** Tracked your launch of Provue as an AI-powered financial intelligence product.
-- **AI Development:** Saw you continuing to develop AI agents and MCP servers to power new capabilities.
+- **Provue Launch:** Launched Provue as an AI-powered financial intelligence product.
+- **AI Development:** Continuing to develop AI agents and MCP servers to power new capabilities.
 
 ---
 
-## Interview Preparation Tips 🧑‍🏫
 
-### Technical Preparation 🧠
-
-1. I am reviewing Node.js best practices with extra attention on Fastify and Express patterns.
-2. I am studying MCP architecture to understand how AI agents interact with servers.
-3. I am revisiting database design, especially PostgreSQL optimization and vector databases.
-4. I am rehearsing system design discussions around microservices, distributed systems, and scalability.
-5. I am practicing API design trade-off conversations, particularly REST versus GraphQL and auth flows.
-
-### Behavioral Preparation 🗣️
-
-1. I am preparing stories that demonstrate ownership.
-2. I’m readying examples where I moved quickly and iterated effectively.
-3. I’m highlighting complex technical problems I’ve solved.
-4. I’m gathering collaboration stories that show cross-functional teamwork.
-5. I’m framing times I challenged the status quo to deliver better outcomes.
-
-### Questions to Ask ❓
-
-#### About Provue 📊
-
-1. I want to ask where you see Provue right now in its development stage.
-2. I intend to explore how you envision Provue integrating with Pazago’s core export platform.
-3. I plan to ask about your 12-24 month vision for Provue’s growth.
-
-#### About the Role 💼
-
-1. I want clarity on the immediate priorities for this position.
-2. I’ll ask about the Provue team structure you have in mind.
-3. I’m curious about the split you anticipate between new feature development and maintaining existing systems.
-
-#### About AI/ML 🧠
-
-1. I want to know which AI/ML models or frameworks your team uses.
-2. I’ll ask how you approach MCP server implementation.
-3. I’m eager to understand the challenges you and the team have faced while building AI agents.
-
-#### About Culture 🎭
-
-1. I plan to ask how decision-making works in the non-hierarchical setup you’ve created.
-2. I want to know what move fast and iterate means day-to-day for you.
-3. I’m curious how you balance speed with code quality and testing.
-
-#### About Growth 📈
-
-1. I’ll ask what success looks like in your view for this role in six months and in one year.
-2. I want to learn about the learning and development opportunities you provide.
-3. I plan to discuss how you plan to scale the engineering team.
-
-### Key Points I’ll Emphasize 📣
-
-- I will highlight my Node.js and PostgreSQL production experience.
-- I’ll describe my interest and experiments with AI/ML and local LLM integrations.
-- I’ll connect my competitive programming background to my problem-solving ability.
-- I’ll emphasize my full-stack experience and appreciation for complete systems.
-- I’ll show how much I care about building scalable, efficient solutions.
-- I’ll demonstrate alignment with a move fast, iterate culture.
 
 ---
 
 ## Company Values & What They Look For ❤️
 
-### Ideal Candidate Traits (As I See Them) 🌟
+### Ideal Candidate Traits 🌟
 
-1. I stay curious and keep up with AI advancements.
-2. I naturally experiment with new tools and technologies.
-3. I thrive amid ambiguity and love shaping processes from scratch.
-4. I’m proactive and resourceful in solving problems.
-5. I care deeply about impact and want to use AI to unlock new possibilities.
+1. Stays curious and keeps up with AI advancements.
+2. Naturally experiments with new tools and technologies.
+3. Thrives amid ambiguity and loves shaping processes from scratch.
+4. Proactive and resourceful in solving problems.
+5. Cares deeply about impact and wants to use AI to unlock new possibilities.
 
 ### Success Metrics 📊
 
-- I focus on execution over ideas alone.
-- I stay adaptable to changing circumstances.
-- I strive to solve real problems better than alternatives.
-- I pursue meaningful value rather than chasing vanity metrics.
+- Focus on execution over ideas alone.
+- Adaptable to changing circumstances.
+- Strive to solve real problems better than alternatives.
+- Pursue meaningful value rather than chasing vanity metrics.
 
 ---
 
@@ -341,30 +284,21 @@ Based on what I gathered, Pazago leans on a modern stack.
 
 ### Company Online Presence 🌐
 
-- I saved your website: [pazago.com](https://www.pazago.com/).
-- I follow your [LinkedIn Company Page](https://in.linkedin.com/company/pazago).
-- I check updates on Instagram at [@pazagohq](https://www.instagram.com/pazagohq/).
-- I have your contact email noted as [connect@pazago.com](mailto:connect@pazago.com).
-- I browse the Provue platform you launched at [provue.ai](https://www.provue.ai/).
-- I capture my ongoing market and product notes on _The Subversive Writer_—Literary Anarchy—at [jaipkapoor99-blog.vercel.app](https://jaipkapoor99-blog.vercel.app/), which I can reference for deeper dives into trends and experiments relevant to Provue.
+- Website: [pazago.com](https://www.pazago.com/).
+- [LinkedIn Company Page](https://in.linkedin.com/company/pazago).
+- Instagram: [@pazagohq](https://www.instagram.com/pazagohq/).
+- Contact email: [connect@pazago.com](mailto:connect@pazago.com).
+- Provue platform: [provue.ai](https://www.provue.ai/).
+- Market and product notes on _The Subversive Writer_—Literary Anarchy—at [jaipkapoor99-blog.vercel.app](https://jaipkapoor99-blog.vercel.app/), which can be referenced for deeper dives into trends and experiments relevant to Provue.
 
 ### Recent Content & Thought Leadership 📰
 
-- I read your blog on export and import topics.
-- I digest the educational content you share explaining EXIM processes.
-- I stay updated on the industry insights and market trends you publish.
-- I review your case studies and success stories.
+- The company blog covers export and import topics.
+- Educational content is shared explaining EXIM processes.
+- Industry insights and market trends are published.
+- Case studies and success stories are available for review.
 
 ---
 
-## Final Thoughts 🙏
 
-I view Provue as an exciting combination of AI/ML innovation and fintech ambition. Your YC pedigree, the vision for the product, and the traction you’ve earned create a compelling story. I’m motivated by the opportunity to build AI agents, work on MCP servers, and contribute directly to your mission of making financial research accessible and powerful.
 
-For my preparation, I’m doubling down on MCP research, polishing examples of scalable systems you might want to dissect, documenting my AI/ML experiments, and leaning into my enthusiasm for the mission you’re driving with Provue. This role aligns perfectly with how I want to grow, and I’m eager to convey that when we speak.
-
-_Report prepared on October 18, 2025 by Jai Kapoor._
-
----
-
-Sources I consulted include your website, LinkedIn, CB Insights, news coverage, job postings, and interviews you’ve given.

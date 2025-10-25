@@ -1,4 +1,4 @@
-# Questions for Nikhil 📝
+# Questions for Hardik 📝
 
 ## Role Expectations 🎯
 
@@ -22,7 +22,6 @@
 
 ## Scaling & Reliability 📈
 
-- 📈 What’s your approach to scaling the AI backend and handling spikes in concurrent agent requests, especially with features like 'Studio' generating audio content?
 - 🔍 What observability or debugging tools are in place for tracking AI agent performance and traffic?
 
 ## Development Workflow 🛠️
